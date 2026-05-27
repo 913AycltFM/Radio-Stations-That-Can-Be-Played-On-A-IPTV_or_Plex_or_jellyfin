@@ -22,17 +22,21 @@
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFM">
     <title lang="en">91.3 Ayclt FM</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://913aycltfm.com" />
   </programme>
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMHD2">
     <title lang="en">91.3 Ayclt FM HD2</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://913aycltfm.com" />
   </programme>
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMHD3">
     <title lang="en">91.3 Ayclt FM HD3</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://913aycltfm.com" />
   </programme>
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="GamingCentralRadio">
     <title lang="en">Gaming Central Radio</title>
     <desc lang="en">Nonstop 2000s and 2010s Hits.</desc>
+    <icon src="https://gamingcentralradio.net" />
   </programme>
 </tv>

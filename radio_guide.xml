@@ -37,6 +37,6 @@
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="GamingCentralRadio">
     <title lang="en">Gaming Central Radio</title>
     <desc lang="en">Nonstop 2000s and 2010s Hits.</desc>
-    <icon src="https://gamingcentralradio.net" />
+    <icon src="https://radio.gamingcentralradio.net/static/uploads/gaming_central_radio/background.1772310720.png" />
   </programme>
 </tv>

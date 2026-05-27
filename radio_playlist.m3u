@@ -1,8 +1,8 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="913AycltFM" tvg-name="91.3 Ayclt FM" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/album_art.1778824541.png" tvg-backdrop="https://i.ibb.co/DPrJRkcs/image-dcee48c4.png" tvg-art="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1778824481.png" tvg-chno="1" group-title="Radio" is-video="true",91.3 Ayclt FM
+#EXTINF:-1 tvg-id="913AycltFM" tvg-name="91.3 Ayclt FM" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/album_art.1778824541.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/album_art.1778824541.png" tvg-art="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1778824481.png" tvg-chno="1" group-title="Radio" is-video="true",91.3 Ayclt FM
 https://radio.913aycltfm.com/listen/91.3_ayclt_fm/jellyfin
 
-#EXTINF:-1 tvg-id="913AycltFMHD2" tvg-name="91.3 Ayclt FM HD2" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/album_art.1778824590.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1778824579.png" tvg-art="https://i.ibb.co/HD4yqpyY/image-d01b6bf1.png" tvg-chno="2" group-title="Radio" is-video="true",91.3 Ayclt FM HD2
+#EXTINF:-1 tvg-id="913AycltFMHD2" tvg-name="91.3 Ayclt FM HD2" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/album_art.1778824590.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1778824579.png" tvg-art="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/album_art.1778824590.png" tvg-chno="2" group-title="Radio" is-video="true",91.3 Ayclt FM HD2
 https://radio.913aycltfm.com/listen/91.3_ayclt_fm_hd2/jellyfin
 
 #EXTINF:-1 tvg-id="913AycltFMHD3" tvg-name="91.3 Ayclt FM HD3" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/album_art.1778824633.png" tvg-backdrop="https://i.ibb.co/BHtXdWW2/image-c269df9-2.png" tvg-art="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1778824625.png" tvg-chno="3" group-title="Radio" is-video="true",91.3 Ayclt FM HD3

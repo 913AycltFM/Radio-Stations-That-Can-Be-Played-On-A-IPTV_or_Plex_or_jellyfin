@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="RadioEPG">
+    <channel id="GamingCentralRadio">
+    <display-name>1</display-name>
+    <display-name>Gaming Central Radio</display-name>
+  </channel>
+
+  <!-- Dummy 24/7 Program Blocks (Fixed to Central Time -0500) -->
+  <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="GamingCentralRadio">
+    <title lang="en">Gaming Central Radio</title>
+    <desc lang="en">Nonstop 2000s and 2010s Hits.</desc>
+    <icon src="https://radio.913aycltfm.com/static/uploads/gaming_central_radio/background.1772310720.png" />
+  </programme>
+</tv>

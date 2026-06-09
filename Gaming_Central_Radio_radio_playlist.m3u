@@ -1,0 +1,3 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="GamingCentralRadio" tvg-name="Gaming Central Radio" tvg-logo="https://radio.gamingcentralradio.net/static/uploads/gaming_central_radio/album_art.1772310730.png" tvg-backdrop="https://radio.gamingcentralradio.net/static/uploads/gaming_central_radio/background.1772310720.png" tvg-art="https://gamingcentralradio.net" tvg-chno="4" group-title="Radio" is-video="true",Gaming Central Radio
+https://radio.gamingcentralradio.net/listen/gaming_central_radio/jellyfin

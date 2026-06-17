@@ -20,7 +20,7 @@ jobs:
         python-version: '3.10'
 
     - name: Execute EPG Generator Script
-      run: python generate_radio_epg.py
+      run: python 913_ayclt_fm_generate_radio_epg.py
 
     - name: Commit and Push Updated EPG File
       run: |

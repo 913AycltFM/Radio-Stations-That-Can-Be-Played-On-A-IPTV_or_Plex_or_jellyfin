@@ -2,13 +2,15 @@ name: Update Radio EPG Metadata
 
 on:
   schedule:
-    # Runs automatically every 5 minutes (GitHub's maximum frequency for free accounts)
     - cron: '*/5'
-  workflow_dispatch: # Allows you to manually click a button to run it anytime
+  workflow_dispatch:
 
 jobs:
   build-and-update:
     runs-on: ubuntu-latest
+    # Add these two lines right here:
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository code
@@ -20,7 +22,7 @@ jobs:
         python-version: '3.10'
 
     - name: Execute EPG Generator Script
-      run: python 913_ayclt_fm_generate_radio_epg.py
+      run: python generate_radio_epg.py
 
     - name: Commit and Push Updated EPG File
       run: |

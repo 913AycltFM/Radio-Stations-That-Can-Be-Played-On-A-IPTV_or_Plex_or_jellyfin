@@ -15,19 +15,92 @@ jobs:
     - name: Checkout repository code
       uses: actions/checkout@v4
 
-    - name: Set up Python Environment
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+    - name: Fetch APIs and Generate XMLTV File
+      run: |
+        # 1. Fetch live raw JSON streams from your AzuraCast endpoints
+        MAIN_JSON=$(curl -s "https://radio.913aycltfm.com/api/nowplaying_static/91.3_ayclt_fm.json")
+        HD2_JSON=$(curl -s "https://radio.913aycltfm.com/api/nowplaying_static/91.3_ayclt_fm_hd2.json")
+        HD3_JSON=$(curl -s "https://radio.913aycltfm.com/api/nowplaying_static/91.3_ayclt_fm_hd3.json")
 
-    - name: Execute EPG Generator Script
-      run: python generate_radio_epg.py
+        # 2. Extract song fields safely using fixed Python sys.argv mapping indices
+        parse_field() {
+          python3 -c "import json, sys; d=json.loads(sys.argv[1]); print(d.get('now_playing', {}).get('song', {}).get(sys.argv[2], sys.argv[3]))" "$1" "$2" "$3"
+        }
+        
+        parse_start_time() {
+          python3 -c "import json, sys, datetime; d=json.loads(sys.argv[1]); ep=d.get('now_playing', {}).get('played_at', int(datetime.datetime.now().timestamp())); dt=datetime.datetime.fromtimestamp(ep); print(dt.strftime('%Y%m%d%H%M%S -0500'))" "$1"
+        }
+        
+        parse_stop_time() {
+          python3 -c "import json, sys, datetime; d=json.loads(sys.argv[1]); ep=d.get('now_playing', {}).get('played_at', int(datetime.datetime.now().timestamp())); dur=d.get('now_playing', {}).get('duration', 240); dt=datetime.datetime.fromtimestamp(ep + dur); print(dt.strftime('%Y%m%d%H%M%S -0500'))" "$1"
+        }
 
-    - name: Commit and Push Updated EPG File
+        # Main Data Extraction
+        M_TITLE=$(parse_field "$MAIN_JSON" "title" "91.3 Ayclt FM Live Stream")
+        M_ARTIST=$(parse_field "$MAIN_JSON" "artist" "Dickinson, Texas")
+        M_ART=$(parse_field "$MAIN_JSON" "art" "")
+        M_START=$(parse_start_time "$MAIN_JSON")
+        M_STOP=$(parse_stop_time "$MAIN_JSON")
+
+        # HD2 Data Extraction
+        HD2_TITLE=$(parse_field "$HD2_JSON" "title" "91.3 Ayclt FM HD2 Live Stream")
+        HD2_ARTIST=$(parse_field "$HD2_JSON" "artist" "Dickinson, Texas")
+        HD2_ART=$(parse_field "$HD2_JSON" "art" "")
+        HD2_START=$(parse_start_time "$HD2_JSON")
+        HD2_STOP=$(parse_stop_time "$HD2_JSON")
+
+        # HD3 Data Extraction
+        HD3_TITLE=$(parse_field "$HD3_JSON" "title" "91.3 Ayclt FM HD3 Live Stream")
+        HD3_ARTIST=$(parse_field "$HD3_JSON" "artist" "Dickinson, Texas")
+        HD3_ART=$(parse_field "$HD3_JSON" "art" "")
+        HD3_START=$(parse_start_time "$HD3_JSON")
+        HD3_STOP=$(parse_stop_time "$HD3_JSON")
+
+        # 3. Construct and compile the final XMLTV file format directly
+        cat <<EOF > epg.xml
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="RadioEPG">
+  <channel id="913AycltFM">
+    <display-name>1</display-name>
+    <display-name>91.3 Ayclt FM</display-name>
+  </channel>
+  <channel id="913AycltFMHD2">
+    <display-name>2</display-name>
+    <display-name>91.3 Ayclt FM HD2</display-name>
+  </channel>
+  <channel id="913AycltFMHD3">
+    <display-name>3</display-name>
+    <display-name>91.3 Ayclt FM HD3</display-name>
+  </channel>
+  
+  <programme start="$M_START" stop="$M_STOP" channel="913AycltFM">
+    <title lang="en">$M_TITLE</title>
+    <sub-title lang="en">$M_ARTIST</sub-title>
+    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    $( [ ! -z "$M_ART" ] && [ "$M_ART" != "None" ] && echo "<icon src=\"$M_ART\" />" )
+  </programme>
+
+  <programme start="$HD2_START" stop="$HD2_STOP" channel="913AycltFMHD2">
+    <title lang="en">$HD2_TITLE</title>
+    <sub-title lang="en">$HD2_ARTIST</sub-title>
+    <desc lang="en">Now Playing on 91.3 Ayclt FM HD2</desc>
+    $( [ ! -z "$HD2_ART" ] && [ "$HD2_ART" != "None" ] && echo "<icon src=\"$HD2_ART\" />" )
+  </programme>
+
+  <programme start="$HD3_START" stop="$HD3_STOP" channel="913AycltFMHD3">
+    <title lang="en">$HD3_TITLE</title>
+    <sub-title lang="en">$HD3_ARTIST</sub-title>
+    <desc lang="en">Now Playing on 91.3 Ayclt FM HD3</desc>
+    $( [ ! -z "$HD3_ART" ] && [ "$HD3_ART" != "None" ] && echo "<icon src=\"$HD3_ART\" />" )
+  </programme>
+</tv>
+EOF
+
+    - name: Commit and Push New XML file
       run: |
         git config --global user.name "GitHub Action EPG Bot"
         git config --global user.email "actions@github.com"
         git add epg.xml
-        # This safely pulls your current branch name automatically:
-        CURRENT_BRANCH=${GITHUB_REF##*/}
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update live track data [skip ci]" && git push origin HEAD:$CURRENT_BRANCH)
+        git commit -m "Auto-update live track XML data [skip ci]" || exit 0
+        git push origin HEAD:main

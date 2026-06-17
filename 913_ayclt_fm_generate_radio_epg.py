@@ -6,17 +6,17 @@ from datetime import datetime, timedelta
 # 1. STATION ENDPOINT MAPPINGS
 STATION_CONFIGS = {
     "913AycltFM": {
-        "url": "https://913aycltfm.com",
+        "url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm",
         "name": "91.3 Ayclt FM",
         "desc": "Dickinson's Texas #1 Hit Music Station"
     },
     "913AycltFMHD2": {
-        "url": "https://913aycltfm.com_hd2",
+        "url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm_hd2",
         "name": "91.3 Ayclt FM HD2",
         "desc": "Now Playing on 91.3 Ayclt FM HD2"
     },
     "913AycltFMHD3": {
-        "url": "https://913aycltfm.com_hd3",
+        "url": "https://radio.913aycltfm.com/api/nowplaying/91.3_ayclt_fm_hd3",
         "name": "91.3 Ayclt FM HD3",
         "desc": "Now Playing on 91.3 Ayclt FM HD3"
     }

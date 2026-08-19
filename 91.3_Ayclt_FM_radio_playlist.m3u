@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="913AycltFM" tvg-name="91.3 Ayclt FM" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/album_art.1778824541.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" tvg-art="https://913aycltfm.com" tvg-chno="1" group-title="Radio" is-video="true",91.3 Ayclt FM
-https://radio.913aycltfm.com/listen/91.3_ayclt_fm/jellyfin
+http://129.158.242.58:8080/memfs/5f8518dd-5322-45d4-b3e9-d42945ffa49f.m3u8
 
 #EXTINF:-1 tvg-id="913AycltFMHD2" tvg-name="91.3 Ayclt FM HD2" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/album_art.1778824590.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png" tvg-art="https://913aycltfm.com" tvg-chno="2" group-title="Radio" is-video="true",91.3 Ayclt FM HD2
 http://129.158.242.58:8080/memfs/499ef585-8b3f-4ffd-a4e6-00238b1220bf.m3u8

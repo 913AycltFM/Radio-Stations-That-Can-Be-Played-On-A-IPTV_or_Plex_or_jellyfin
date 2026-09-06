@@ -1,4 +1,1 @@
-#EXTM3U
-#EXTINF:-1 tvg-id="913AycltFM" tvg-name="91.3 Ayclt FM" tvg-logo="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/album_art.1778824541.png" tvg-backdrop="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" tvg-art="https://913aycltfm.com" tvg-chno="1" group-title="Radio" is-video="true",91.3 Ayclt FM
-https://tv.913aycltfm.com/memfs/e6795845-f359-47ca-bdc6-1b32db624e62.m3u8
-
+#EXTM3U#EXTINF:-1 tvg-id="913AycltFM" tvg-name="91.3 Ayclt FM" tvg-logo="https://913aycltfm.com" tvg-chno="1" group-title="Radio", 91.3 Ayclt FMhttps://tv.913aycltfm.com/memfs/e6795845-f359-47ca-bdc6-1b32db624e62.m3u8

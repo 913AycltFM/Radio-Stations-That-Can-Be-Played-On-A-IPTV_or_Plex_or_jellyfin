@@ -5,8 +5,16 @@
     <display-name>1</display-name>
     <display-name>91.3 Ayclt FM</display-name>
   </channel>
-  <channel id="913AycltFMLiveStudioCam">
+  <channel id="913AycltFMHD2">
     <display-name>1.2</display-name>
+    <display-name>91.3 Ayclt FM HD2</display-name>
+  </channel>
+  <channel id="913AycltFMHD3">
+    <display-name>1.3</display-name>
+    <display-name>91.3 Ayclt FM HD3</display-name>
+  </channel>
+  <channel id="913AycltFMLiveStudioCam">
+    <display-name>1</display-name>
     <display-name>91.3 Ayclt FM Live Studio Cam</display-name>
   </channel>
 
@@ -14,9 +22,21 @@
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFM">
     <title lang="en">91.3 Ayclt FM</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
   </programme>
-  <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMLiveStudioCam">
-    <title lang="en">91.3 Ayclt FM Live StudioCam</title>
+  <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMHD2">
+    <title lang="en">91.3 Ayclt FM HD2</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png" />
+  </programme>
+  <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMHD3">
+    <title lang="en">91.3 Ayclt FM HD3</title>
+    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png" />
+  </programme>
+  <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFM">
+    <title lang="en">91.3 Ayclt FM Live Studio Cam</title>
+    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
+    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
   </programme>
 </tv>

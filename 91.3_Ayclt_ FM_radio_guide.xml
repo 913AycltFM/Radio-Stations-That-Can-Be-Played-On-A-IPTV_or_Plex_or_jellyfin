@@ -9,9 +9,7 @@
     <display-name>1.2</display-name>
     <display-name>91.3 Ayclt FM Live Studio Cam</display-name>
   </channel>
-  
-  </channel>
-  
+
   <!-- Dummy 24/7 Program Blocks (Fixed to Central Time -0500) -->
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFM">
     <title lang="en">91.3 Ayclt FM</title>
@@ -20,7 +18,5 @@
   <programme start="20260101000000 -0500" stop="20300101000000 -0500" channel="913AycltFMLiveStudioCam">
     <title lang="en">91.3 Ayclt FM Live StudioCam</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
-  </programme>
-  <programme start="20260101000000 -0500" stop="20300101000000 -0500"
   </programme>
 </tv>

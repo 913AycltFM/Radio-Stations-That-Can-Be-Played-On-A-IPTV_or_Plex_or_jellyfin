@@ -2,23 +2,23 @@
 <!DOCTYPE tv SYSTEM "xmltv.dtd">
 <tv generator-info-name="RadioEPG">
   <channel id="913AycltFM">
-    <display-name>1 91.3</display-name>
-    <display-name>Ayclt FM</display-name>
+    <display-name>1</display-name>
+    <display-name>91.3 Ayclt FM</display-name>
   </channel>
   <channel id="913AycltFMHD2">
-    <display-name>1.2 91.3</display-name>
-    <display-name>9Ayclt FM HD2</display-name>
+    <display-name>1.2</display-name>
+    <display-name>91.3 Ayclt FM HD2</display-name>
   </channel>
   <channel id="913AycltFMHD3">
     <display-name>1.3</display-name>
     <display-name>91.3 Ayclt FM HD3</display-name>
   </channel>
   <channel id="913AycltFMLiveStudioCam">
-    <display-name>1.4 91.3</display-name>
-    <display-name>Ayclt FM Live Studio Cam</display-name>
+    <display-name>1.4</display-name>
+    <display-name>91.3 Ayclt FM Live Studio Cam</display-name>
   </channel>
   <channel id="TheMidWestPlainsman">
-    <display-name>1.5</display-name>
+    <display-name>1.6</display-name>
     <display-name>The Mid West Plainsman</display-name>
   </channel>
 

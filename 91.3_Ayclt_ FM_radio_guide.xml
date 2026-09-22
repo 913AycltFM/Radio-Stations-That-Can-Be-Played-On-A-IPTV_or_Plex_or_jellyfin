@@ -17,29 +17,12 @@
     <display-name>1.4</display-name>
     <display-name>91.3 Ayclt FM Live Studio Cam</display-name>
   </channel>
+  <channel id="TheMidWestPlainsman">
+    <display-name>1.5</display-name>
+    <display-name>The Mid West Plainsman</display-name>
+  </channel>
 
   <!-- Dummy 24/7 Program Blocks (Fixed to Central Time -0500) -->
-  <programme start="20260919000000 -0500" stop="20260920000000 -0500" channel="913AycltFM">
-    <title lang="en">91.3 Ayclt FM</title>
-    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
-    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
-  </programme>
-  <programme start="20260919000000 -0500" stop="20260920000000 -0500" channel="913AycltFMHD2">
-    <title lang="en">91.3 Ayclt FM HD2</title>
-    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
-    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png" />
-  </programme>
-  <programme start="20260919000000 -0500" stop="20260920000000 -0500" channel="913AycltFMHD3">
-    <title lang="en">91.3 Ayclt FM HD3</title>
-    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
-    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png" />
-  </programme>
-  <programme start="20260919000000 -0500" stop="20260920000000 -0500" channel="913AycltFMLiveStudioCam">
-    <title lang="en">91.3 Ayclt FM Live Studio Cam</title>
-    <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
-    <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
-  </programme>
-
   <programme start="20260920000000 -0500" stop="20260921000000 -0500" channel="913AycltFM">
     <title lang="en">91.3 Ayclt FM</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
@@ -59,5 +42,10 @@
     <title lang="en">91.3 Ayclt FM Live Studio Cam</title>
     <desc lang="en">Dickinson's Texas #1 Hit Music Station</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
+  </programme>
+  <programme start="20260920000000 -0500" stop="20260921000000 -0500" channel="TheMidWestPlainsman">
+    <title lang="en">The Mid West Plainsman</title>
+    <desc lang="en">The Voice Of The West</desc>
+    <icon src="https://i.postimg.cc/34nBPvcf/669472374-938158395639108-5293687814879855277-n.png" />
   </programme>
 </tv>

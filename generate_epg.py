@@ -559,41 +559,82 @@ def fill_schedule_gaps(
     end_time,
 ):
     """
-    Keep real AzuraCast programmes and fill every unscheduled gap
-    with 30-minute filler programmes.
+    Build one authoritative, non-overlapping timeline for a channel.
 
-    This guarantees continuous EPG coverage without one-second
-    programmes or huge multi-day filler blocks.
+    AzuraCast can return duplicate or overlapping schedule records.
+    Real scheduled programmes are authoritative.  Filler is created
+    only after those real programmes have been normalized, so a filler
+    entry can never occupy the same time as a real programme.
     """
     result = []
 
-    events = sorted(
-        events,
-        key=lambda x: (x["start"], x["end"]),
-    )
-
-    current = start_time
+    # --------------------------------------------------------
+    # NORMALIZE REAL AZURACAST PROGRAMMES FIRST
+    # --------------------------------------------------------
+    scheduled = []
 
     for event in events:
         event_start = max(event["start"], start_time)
         event_end = min(event["end"], end_time)
 
-        if event_end <= start_time:
+        if event_end <= event_start:
             continue
 
-        if event_start >= end_time:
-            break
+        normalized = dict(event)
+        normalized["start"] = event_start
+        normalized["end"] = event_end
+        normalized["fallback"] = False
+        scheduled.append(normalized)
 
-        # Ignore an event completely covered by an earlier event.
-        if event_end <= current:
-            continue
+    # Sort by start time. For identical starts, keep the longer
+    # programme first; this commonly collapses duplicate AzuraCast
+    # records representing the same scheduled block.
+    scheduled.sort(
+        key=lambda x: (
+            x["start"],
+            -(x["end"] - x["start"]).total_seconds(),
+            x["title"],
+        )
+    )
 
-        # If schedules overlap, trim the later event so the XMLTV
-        # timeline remains continuous and non-overlapping.
-        if event_start < current:
-            event_start = current
+    real_events = []
 
-        # Fill the gap before the real programme in 30-minute blocks.
+    for event in scheduled:
+        event_start = event["start"]
+        event_end = event["end"]
+
+        # An earlier real programme already covers this event.
+        if real_events and event_start < real_events[-1]["end"]:
+            previous = real_events[-1]
+
+            # If both records start together, prefer the longer record.
+            if event_start == previous["start"]:
+                if event_end > previous["end"]:
+                    real_events[-1] = event
+                continue
+
+            # Otherwise trim the overlapping portion from the later
+            # programme. This prevents any real/real overlap.
+            event_start = previous["end"]
+
+            if event_end <= event_start:
+                continue
+
+            event = dict(event)
+            event["start"] = event_start
+
+        real_events.append(event)
+
+    # --------------------------------------------------------
+    # BUILD THE FINAL TIMELINE
+    # --------------------------------------------------------
+    current = start_time
+
+    for event in real_events:
+        event_start = event["start"]
+        event_end = event["end"]
+
+        # Fill only the genuine gap before the real programme.
         if event_start > current:
             add_filler_blocks(
                 result,
@@ -602,15 +643,22 @@ def fill_schedule_gaps(
                 event_start,
             )
 
-        if event_end > event_start:
-            actual_event = dict(event)
-            actual_event["start"] = event_start
-            actual_event["end"] = event_end
-            actual_event["fallback"] = False
-            result.append(actual_event)
-            current = event_end
+        # Never allow a programme to move backwards.
+        if event_end <= current:
+            continue
 
-    # Fill everything after the final real programme.
+        if event_start < current:
+            event_start = current
+
+        actual_event = dict(event)
+        actual_event["start"] = event_start
+        actual_event["end"] = event_end
+        actual_event["fallback"] = False
+
+        result.append(actual_event)
+        current = event_end
+
+    # Fill the remaining unscheduled time.
     if current < end_time:
         add_filler_blocks(
             result,

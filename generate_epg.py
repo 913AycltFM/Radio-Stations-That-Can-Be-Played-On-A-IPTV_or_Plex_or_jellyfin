@@ -525,13 +525,13 @@ def convert_schedule(channel, schedules):
 
 def add_filler_blocks(result, channel, start_time, end_time):
     """
-    Add filler in 30-minute blocks.
+    Add filler in 60-minute blocks.
 
-    XMLTV/Jellyfin handles many regular, fixed-length programmes
-    better than one enormous filler programme.
+    XMLTV/Jellyfin receives regular, fixed-length hourly filler
+    programmes whenever the channel has an unscheduled gap.
     """
     current = start_time
-    block_size = timedelta(minutes=30)
+    block_size = timedelta(hours=1)
 
     while current < end_time:
         block_end = min(current + block_size, end_time)

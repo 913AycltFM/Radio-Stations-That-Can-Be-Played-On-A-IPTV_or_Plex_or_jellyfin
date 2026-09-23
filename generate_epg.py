@@ -956,15 +956,49 @@ def main():
 
     print(
         "LIVE STUDIO CAM: "
-        "No AzuraCast schedule configured."
+        "Using 91.3 Ayclt FM schedule."
+    )
+
+    # The Studio Cam uses the same programming schedule as
+    # the main 91.3 Ayclt FM channel.
+    fm_channel = next(
+        channel
+        for channel in CHANNELS
+        if channel["id"] == "913AycltFM"
+    )
+
+    fm_schedules = fetch_station_schedule(
+        STATIONS["913AycltFM"]
+    )
+
+    fm_events = convert_schedule(
+        fm_channel,
+        fm_schedules,
+    )
+
+    studio_events = []
+
+    for event in fm_events:
+        studio_event = dict(event)
+        studio_event["channel_id"] = live_cam["id"]
+        studio_event["channel_name"] = live_cam["name"]
+        studio_event["icon"] = live_cam["icon"]
+        studio_events.append(studio_event)
+
+    studio_events = fill_schedule_gaps(
+        live_cam,
+        studio_events,
+        start_time,
+        end_time,
+    )
+
+    print(
+        f"Studio Cam programs after FM schedule sync: "
+        f"{len(studio_events)}"
     )
 
     all_events.extend(
-        create_no_schedule_channel(
-            live_cam,
-            start_time,
-            end_time,
-        )
+        studio_events
     )
 
     # ========================================================

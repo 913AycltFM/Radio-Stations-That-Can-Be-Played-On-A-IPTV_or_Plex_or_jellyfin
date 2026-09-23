@@ -19,7 +19,7 @@ AZURACAST_BASE_URL = "https://radio.913aycltfm.com"
 TIMEZONE = ZoneInfo("America/Chicago")
 
 # How far into the future the EPG should be generated
-DAYS_AHEAD = 30
+DAYS_AHEAD = 14
 
 # Output files
 XML_OUTPUT = "91.3_Ayclt_FM_radio_guide.xml"
@@ -361,8 +361,8 @@ def fetch_station_schedule(
     Supplying start/end makes AzuraCast return the scheduled lineup
     for the requested dates, including recurring DJ/playlist blocks.
 
-    We use 14-day chunks so the 30-day EPG does not depend on one
-    very large API response.
+    We use 14-day chunks so the EPG request stays within a manageable
+    date range.
     """
     schedules = []
 

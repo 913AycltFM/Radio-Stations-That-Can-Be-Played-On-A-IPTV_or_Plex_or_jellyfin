@@ -1,3 +1,4 @@
+```python
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -8,15 +9,19 @@ from zoneinfo import ZoneInfo
 
 
 # ============================================================
-# 91.3 AYCLT FM - AUTOMATIC XMLTV EPG GENERATOR
+# 91.3 AYCLT FM - AZURACAST XMLTV EPG GENERATOR
+# Automatic DJ Schedule + Gap Filling
 # ============================================================
 
 AZURACAST_BASE_URL = "https://radio.913aycltfm.com"
 
+# Central Time
 TIMEZONE = ZoneInfo("America/Chicago")
 
+# How far into the future the EPG should be generated
 DAYS_AHEAD = 30
 
+# Output files
 XML_OUTPUT = "91.3_Ayclt_ FM_radio_guide.xml"
 JSON_OUTPUT = "epg.json"
 
@@ -33,7 +38,7 @@ STATIONS = {
 
 
 # ============================================================
-# FIVE JELLYFIN CHANNELS
+# IPTV / JELLYFIN CHANNELS
 # ============================================================
 
 CHANNELS = [
@@ -42,7 +47,10 @@ CHANNELS = [
         "display": "1",
         "name": "91.3 Ayclt FM",
         "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
+        "icon": (
+            "https://radio.913aycltfm.com/static/uploads/"
+            "91.3_ayclt_fm/background.1779890712.png"
+        ),
     },
 
     {
@@ -50,7 +58,10 @@ CHANNELS = [
         "display": "1.2",
         "name": "91.3 Ayclt FM HD2",
         "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png",
+        "icon": (
+            "https://radio.913aycltfm.com/static/uploads/"
+            "91.3_ayclt_fm_hd2/background.1779890739.png"
+        ),
     },
 
     {
@@ -58,7 +69,10 @@ CHANNELS = [
         "display": "1.3",
         "name": "91.3 Ayclt FM HD3",
         "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png",
+        "icon": (
+            "https://radio.913aycltfm.com/static/uploads/"
+            "91.3_ayclt_fm_hd3/background.1779890763.png"
+        ),
     },
 
     {
@@ -66,7 +80,10 @@ CHANNELS = [
         "display": "1.4",
         "name": "91.3 Ayclt FM Live Studio Cam",
         "description": "91.3 Ayclt FM Live Studio Cam",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
+        "icon": (
+            "https://radio.913aycltfm.com/static/uploads/"
+            "91.3_ayclt_fm/background.1779890712.png"
+        ),
     },
 
     {
@@ -78,17 +95,19 @@ CHANNELS = [
             "In Waterloo, Iowa Covering Everything In The Cedar Valley "
             "Corridor and Central Iowa"
         ),
-        "icon": "https://mp3tourl.com/images/1790116455920-0030dd1a-85d7-401a-bb1b-8cdb4160da9a.png",
+        "icon": (
+            "https://mp3tourl.com/images/"
+            "1790116455920-0030dd1a-85d7-401a-bb1b-8cdb4160da9a.png"
+        ),
     },
 ]
 
 
 # ============================================================
-# FETCH JSON
+# FETCH JSON FROM AZURACAST
 # ============================================================
 
 def fetch_json(url):
-
     print(f"Fetching API: {url}")
 
     request = Request(
@@ -100,40 +119,27 @@ def fetch_json(url):
     )
 
     try:
-
         with urlopen(request, timeout=30) as response:
-
-            return json.loads(
-                response.read().decode("utf-8-sig")
-            )
+            data = response.read().decode("utf-8-sig")
+            return json.loads(data)
 
     except HTTPError as error:
-
-        print(
-            f"HTTP ERROR {error.code}: {url}"
-        )
+        print(f"HTTP ERROR {error.code}: {url}")
 
     except URLError as error:
-
-        print(
-            f"URL ERROR: {error.reason}"
-        )
+        print(f"URL ERROR: {error.reason}")
 
     except Exception as error:
-
-        print(
-            f"ERROR: {error}"
-        )
+        print(f"ERROR: {error}")
 
     return None
 
 
 # ============================================================
-# FIND SCHEDULE LIST
+# FIND THE SCHEDULE LIST
 # ============================================================
 
 def find_schedule_list(data):
-
     if isinstance(data, list):
         return data
 
@@ -149,19 +155,14 @@ def find_schedule_list(data):
     ]
 
     for key in keys:
-
         value = data.get(key)
 
         if isinstance(value, list):
             return value
 
         if isinstance(value, dict):
-
             for nested_key in keys:
-
-                nested = value.get(
-                    nested_key
-                )
+                nested = value.get(nested_key)
 
                 if isinstance(nested, list):
                     return nested
@@ -170,18 +171,15 @@ def find_schedule_list(data):
 
 
 # ============================================================
-# GET FIELD
+# GET A FIELD FROM A JSON OBJECT
 # ============================================================
 
 def get_field(item, names):
-
     if not isinstance(item, dict):
         return None
 
     for name in names:
-
         if name in item:
-
             value = item[name]
 
             if value is not None:
@@ -191,24 +189,20 @@ def get_field(item, names):
 
 
 # ============================================================
-# DATE PARSER
+# PARSE DATE / TIME
 # ============================================================
 
 def parse_datetime(value):
-
     if value is None:
         return None
 
+    # Unix timestamp
     if isinstance(value, (int, float)):
-
         try:
-
             return datetime.fromtimestamp(
                 value,
                 tz=ZoneInfo("UTC")
-            ).astimezone(
-                TIMEZONE
-            )
+            ).astimezone(TIMEZONE)
 
         except Exception:
             return None
@@ -218,51 +212,38 @@ def parse_datetime(value):
     if not value:
         return None
 
-    # Unix timestamp
+    # Numeric timestamp
     if value.isdigit():
-
         try:
-
             timestamp = int(value)
 
+            # Milliseconds
             if timestamp > 100000000000:
                 timestamp /= 1000
 
             return datetime.fromtimestamp(
                 timestamp,
                 tz=ZoneInfo("UTC")
-            ).astimezone(
-                TIMEZONE
-            )
+            ).astimezone(TIMEZONE)
 
         except Exception:
             pass
 
     # ISO 8601
     try:
+        converted = value.replace("Z", "+00:00")
 
-        converted = value.replace(
-            "Z",
-            "+00:00"
-        )
-
-        dt = datetime.fromisoformat(
-            converted
-        )
+        dt = datetime.fromisoformat(converted)
 
         if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=TIMEZONE)
 
-            dt = dt.replace(
-                tzinfo=TIMEZONE
-            )
-
-        return dt.astimezone(
-            TIMEZONE
-        )
+        return dt.astimezone(TIMEZONE)
 
     except Exception:
         pass
 
+    # Other common formats
     formats = [
         "%Y-%m-%d %H:%M:%S",
         "%Y-%m-%d %H:%M",
@@ -273,17 +254,10 @@ def parse_datetime(value):
     ]
 
     for fmt in formats:
-
         try:
+            dt = datetime.strptime(value, fmt)
 
-            dt = datetime.strptime(
-                value,
-                fmt
-            )
-
-            return dt.replace(
-                tzinfo=TIMEZONE
-            )
+            return dt.replace(tzinfo=TIMEZONE)
 
         except Exception:
             continue
@@ -292,23 +266,18 @@ def parse_datetime(value):
 
 
 # ============================================================
-# XMLTV DATE
+# XMLTV DATE / TIME FORMAT
 # ============================================================
 
 def xmltv_datetime(dt):
-
-    dt = dt.astimezone(
-        TIMEZONE
-    )
+    dt = dt.astimezone(TIMEZONE)
 
     offset = dt.utcoffset()
 
     if offset is None:
         offset = timedelta(0)
 
-    minutes = int(
-        offset.total_seconds() / 60
-    )
+    minutes = int(offset.total_seconds() / 60)
 
     sign = "+" if minutes >= 0 else "-"
 
@@ -327,11 +296,7 @@ def xmltv_datetime(dt):
 # GET PROGRAM TITLE
 # ============================================================
 
-def get_program_title(
-    item,
-    channel_name
-):
-
+def get_program_title(item, channel_name):
     value = get_field(
         item,
         [
@@ -342,62 +307,48 @@ def get_program_title(
             "playlist_name",
             "streamer_name",
             "dj_name",
-        ]
+        ],
     )
 
     if isinstance(value, dict):
-
         value = get_field(
             value,
             [
                 "name",
                 "title",
-            ]
+            ],
         )
 
     if value:
-
-        return str(
-            value
-        ).strip()
+        return str(value).strip()
 
     return channel_name
 
 
 # ============================================================
-# GET DESCRIPTION
+# GET PROGRAM DESCRIPTION
 # ============================================================
 
-def get_description(
-    item,
-    channel_description
-):
-
+def get_description(item, channel_description):
     value = get_field(
         item,
         [
             "description",
             "desc",
-        ]
+        ],
     )
 
     if value:
-
-        return str(
-            value
-        ).strip()
+        return str(value).strip()
 
     return channel_description
 
 
 # ============================================================
-# FETCH AZURACAST SCHEDULE
+# FETCH STATION SCHEDULE
 # ============================================================
 
-def fetch_station_schedule(
-    station_slug
-):
-
+def fetch_station_schedule(station_slug):
     url = (
         f"{AZURACAST_BASE_URL}"
         f"/api/station/"
@@ -405,16 +356,12 @@ def fetch_station_schedule(
         f"/schedule"
     )
 
-    data = fetch_json(
-        url
-    )
+    data = fetch_json(url)
 
     if data is None:
         return []
 
-    schedules = find_schedule_list(
-        data
-    )
+    schedules = find_schedule_list(data)
 
     print(
         f"Schedule records received: "
@@ -425,24 +372,15 @@ def fetch_station_schedule(
 
 
 # ============================================================
-# CONVERT SCHEDULES
+# CONVERT AZURACAST SCHEDULE TO EPG EVENTS
 # ============================================================
 
-def convert_schedule(
-    channel,
-    schedules
-):
-
+def convert_schedule(channel, schedules):
     events = []
 
-    now = datetime.now(
-        TIMEZONE
-    )
+    now = datetime.now(TIMEZONE)
 
-    minimum = (
-        now -
-        timedelta(minutes=10)
-    )
+    minimum = now - timedelta(minutes=10)
 
     maximum = (
         now +
@@ -454,6 +392,10 @@ def convert_schedule(
         if not isinstance(item, dict):
             continue
 
+        # ----------------------------------------------------
+        # START TIME
+        # ----------------------------------------------------
+
         start_value = get_field(
             item,
             [
@@ -463,8 +405,12 @@ def convert_schedule(
                 "startDateTime",
                 "starts_at",
                 "start_at",
-            ]
+            ],
         )
+
+        # ----------------------------------------------------
+        # END TIME
+        # ----------------------------------------------------
 
         end_value = get_field(
             item,
@@ -475,16 +421,12 @@ def convert_schedule(
                 "endDateTime",
                 "ends_at",
                 "end_at",
-            ]
+            ],
         )
 
-        start = parse_datetime(
-            start_value
-        )
+        start = parse_datetime(start_value)
 
-        end = parse_datetime(
-            end_value
-        )
+        end = parse_datetime(end_value)
 
         if start is None or end is None:
             continue
@@ -510,11 +452,11 @@ def convert_schedule(
                 "channel_name": channel["name"],
                 "title": get_program_title(
                     item,
-                    channel["name"]
+                    channel["name"],
                 ),
                 "description": get_description(
                     item,
-                    channel["description"]
+                    channel["description"],
                 ),
                 "start": start,
                 "end": end,
@@ -527,31 +469,31 @@ def convert_schedule(
 
 
 # ============================================================
-# FILL SCHEDULE GAPS
+# FILL ALL UNSCHEDULED GAPS
+#
+# IMPORTANT:
+# The filler uses:
+#
+# TITLE:
+#     Channel name
+#
+# DESCRIPTION:
+#     Normal channel description
+#
+# No "No scheduled DJ or program" text is added.
 # ============================================================
 
 def fill_schedule_gaps(
     channel,
     events,
     start_time,
-    end_time
+    end_time,
 ):
-
-    """
-    Fills every period where no DJ/show is scheduled.
-
-    The fill program is:
-
-        91.3 Ayclt FM
-
-    This prevents Jellyfin from having blank guide periods.
-    """
-
     result = []
 
     events = sorted(
         events,
-        key=lambda x: x["start"]
+        key=lambda x: x["start"],
     )
 
     current = start_time
@@ -561,14 +503,12 @@ def fill_schedule_gaps(
         event_start = event["start"]
         event_end = event["end"]
 
-        # Ignore events completely outside the window
         if event_end <= start_time:
             continue
 
         if event_start >= end_time:
             break
 
-        # Clamp event
         if event_start < start_time:
             event_start = start_time
 
@@ -576,7 +516,7 @@ def fill_schedule_gaps(
             event_end = end_time
 
         # ----------------------------------------------------
-        # GAP BEFORE DJ/SHOW
+        # FILL GAP BEFORE ACTUAL PROGRAM
         # ----------------------------------------------------
 
         if event_start > current:
@@ -585,14 +525,18 @@ def fill_schedule_gaps(
                 {
                     "channel_id": channel["id"],
                     "channel_name": channel["name"],
+
+                    # FILLER TITLE
                     "title": channel["name"],
-                    "description": (
-                        f"{channel['description']} "
-                        "No scheduled DJ or program."
-                    ),
+
+                    # FILLER DESCRIPTION
+                    "description": channel["description"],
+
                     "start": current,
                     "end": event_start,
+
                     "icon": channel["icon"],
+
                     "fallback": True,
                 }
             )
@@ -603,31 +547,22 @@ def fill_schedule_gaps(
             )
 
         # ----------------------------------------------------
-        # ADD ACTUAL DJ/SHOW
+        # ADD ACTUAL SCHEDULED PROGRAM
         # ----------------------------------------------------
 
         if event_end > event_start:
 
-            actual_event = dict(
-                event
-            )
+            actual_event = dict(event)
 
-            actual_event["start"] = (
-                event_start
-            )
+            actual_event["start"] = event_start
+            actual_event["end"] = event_end
 
-            actual_event["end"] = (
-                event_end
-            )
-
-            result.append(
-                actual_event
-            )
+            result.append(actual_event)
 
             current = event_end
 
     # --------------------------------------------------------
-    # GAP AFTER LAST SHOW
+    # FILL GAP AFTER LAST PROGRAM
     # --------------------------------------------------------
 
     if current < end_time:
@@ -636,14 +571,18 @@ def fill_schedule_gaps(
             {
                 "channel_id": channel["id"],
                 "channel_name": channel["name"],
+
+                # FILLER TITLE
                 "title": channel["name"],
-                "description": (
-                    f"{channel['description']} "
-                    "No scheduled DJ or program."
-                ),
+
+                # FILLER DESCRIPTION
+                "description": channel["description"],
+
                 "start": current,
                 "end": end_time,
+
                 "icon": channel["icon"],
+
                 "fallback": True,
             }
         )
@@ -657,34 +596,37 @@ def fill_schedule_gaps(
 
 
 # ============================================================
-# CREATE DAILY FILL FOR CHANNEL WITH NO SCHEDULE
+# CHANNELS WITHOUT AZURACAST SCHEDULES
 # ============================================================
 
 def create_no_schedule_channel(
     channel,
     start_time,
-    end_time
+    end_time,
 ):
-
     return [
         {
             "channel_id": channel["id"],
             "channel_name": channel["name"],
+
+            # TITLE = CHANNEL NAME
             "title": channel["name"],
-            "description": (
-                f"{channel['description']} "
-                "No scheduled DJ or program."
-            ),
+
+            # DESCRIPTION = NORMAL CHANNEL DESCRIPTION
+            "description": channel["description"],
+
             "start": start_time,
             "end": end_time,
+
             "icon": channel["icon"],
+
             "fallback": True,
         }
     ]
 
 
 # ============================================================
-# REMOVE DUPLICATES
+# CLEAN DUPLICATE EVENTS
 # ============================================================
 
 def clean_events(events):
@@ -716,9 +658,7 @@ def clean_events(events):
 
         seen.add(key)
 
-        cleaned.append(
-            event
-        )
+        cleaned.append(event)
 
     return cleaned
 
@@ -732,9 +672,8 @@ def generate_xml(events):
     root = ET.Element(
         "tv",
         {
-            "generator-info-name":
-                "RadioEPG"
-        }
+            "generator-info-name": "RadioEPG"
+        },
     )
 
     # --------------------------------------------------------
@@ -748,17 +687,17 @@ def generate_xml(events):
             "channel",
             {
                 "id": channel["id"]
-            }
+            },
         )
 
         ET.SubElement(
             channel_element,
-            "display-name"
+            "display-name",
         ).text = channel["display"]
 
         ET.SubElement(
             channel_element,
-            "display-name"
+            "display-name",
         ).text = channel["name"]
 
     # --------------------------------------------------------
@@ -771,19 +710,14 @@ def generate_xml(events):
             root,
             "programme",
             {
-                "start":
-                    xmltv_datetime(
-                        event["start"]
-                    ),
-
-                "stop":
-                    xmltv_datetime(
-                        event["end"]
-                    ),
-
-                "channel":
-                    event["channel_id"],
-            }
+                "start": xmltv_datetime(
+                    event["start"]
+                ),
+                "stop": xmltv_datetime(
+                    event["end"]
+                ),
+                "channel": event["channel_id"],
+            },
         )
 
         ET.SubElement(
@@ -791,7 +725,7 @@ def generate_xml(events):
             "title",
             {
                 "lang": "en"
-            }
+            },
         ).text = event["title"]
 
         ET.SubElement(
@@ -799,7 +733,7 @@ def generate_xml(events):
             "desc",
             {
                 "lang": "en"
-            }
+            },
         ).text = event["description"]
 
         if event.get("icon"):
@@ -809,55 +743,58 @@ def generate_xml(events):
                 "icon",
                 {
                     "src": event["icon"]
-                }
+                },
             )
 
-    try:
+    # --------------------------------------------------------
+    # FORMAT XML
+    # --------------------------------------------------------
 
+    try:
         ET.indent(
             root,
-            space="  "
+            space="  ",
         )
 
     except AttributeError:
         pass
 
-    tree = ET.ElementTree(
-        root
-    )
+    tree = ET.ElementTree(root)
 
-    path = Path(
-        XML_OUTPUT
-    )
+    path = Path(XML_OUTPUT)
 
     tree.write(
         path,
         encoding="utf-8",
-        xml_declaration=True
+        xml_declaration=True,
     )
 
     xml = path.read_text(
         encoding="utf-8"
     )
 
+    # Normalize XML declaration
     xml = xml.replace(
         '<?xml version=\'1.0\' encoding=\'utf-8\'?>',
         '<?xml version="1.0" encoding="utf-8"?>',
-        1
+        1,
     )
 
+    # Add XMLTV DOCTYPE
     if "<!DOCTYPE tv SYSTEM" not in xml:
 
         xml = xml.replace(
             '<?xml version="1.0" encoding="utf-8"?>',
+
             '<?xml version="1.0" encoding="utf-8"?>\n'
             '<!DOCTYPE tv SYSTEM "xmltv.dtd">',
-            1
+
+            1,
         )
 
     path.write_text(
         xml,
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
     print(
@@ -877,41 +814,24 @@ def generate_json(events):
 
         output.append(
             {
-                "channel_id":
-                    event["channel_id"],
-
-                "station_name":
-                    event["channel_name"],
-
-                "title":
-                    event["title"],
-
-                "description":
-                    event["description"],
-
-                "start":
-                    event["start"].isoformat(),
-
-                "end":
-                    event["end"].isoformat(),
-
-                "icon":
-                    event["icon"],
-
-                "fallback":
-                    event["fallback"],
+                "channel_id": event["channel_id"],
+                "station_name": event["channel_name"],
+                "title": event["title"],
+                "description": event["description"],
+                "start": event["start"].isoformat(),
+                "end": event["end"].isoformat(),
+                "icon": event["icon"],
+                "fallback": event["fallback"],
             }
         )
 
-    Path(
-        JSON_OUTPUT
-    ).write_text(
+    Path(JSON_OUTPUT).write_text(
         json.dumps(
             output,
             indent=2,
-            ensure_ascii=False
+            ensure_ascii=False,
         ),
-        encoding="utf-8"
+        encoding="utf-8",
     )
 
     print(
@@ -953,12 +873,15 @@ def validate_xml():
 def main():
 
     print("=" * 70)
+
     print(
         "91.3 AYCLT FM - AZURACAST XMLTV EPG"
     )
+
     print(
         "AUTOMATIC DJ SCHEDULE + GAP FILL"
     )
+
     print("=" * 70)
 
     now = datetime.now(
@@ -978,13 +901,14 @@ def main():
     all_events = []
 
     # ========================================================
-    # FM / HD2 / HD3
+    # PROCESS AZURACAST STATIONS
     # ========================================================
 
     for channel in CHANNELS:
 
         channel_id = channel["id"]
 
+        # Only process channels connected to AzuraCast
         if channel_id not in STATIONS:
             continue
 
@@ -993,7 +917,9 @@ def main():
         ]
 
         print()
+
         print("-" * 70)
+
         print(
             f"PROCESSING: "
             f"{channel['name']}"
@@ -1005,7 +931,7 @@ def main():
 
         actual_events = convert_schedule(
             channel,
-            schedules
+            schedules,
         )
 
         print(
@@ -1013,15 +939,11 @@ def main():
             f"{len(actual_events)}"
         )
 
-        # ----------------------------------------------------
-        # FILL EVERY EMPTY PERIOD
-        # ----------------------------------------------------
-
         filled_events = fill_schedule_gaps(
             channel,
             actual_events,
             start_time,
-            end_time
+            end_time,
         )
 
         print(
@@ -1040,11 +962,12 @@ def main():
     live_cam = next(
         channel
         for channel in CHANNELS
-        if channel["id"] ==
-        "913AycltFMLiveStudioCam"
+        if channel["id"]
+        == "913AycltFMLiveStudioCam"
     )
 
     print()
+
     print(
         "LIVE STUDIO CAM: "
         "No AzuraCast schedule configured."
@@ -1054,7 +977,7 @@ def main():
         create_no_schedule_channel(
             live_cam,
             start_time,
-            end_time
+            end_time,
         )
     )
 
@@ -1065,9 +988,11 @@ def main():
     plainsman = next(
         channel
         for channel in CHANNELS
-        if channel["id"] ==
-        "TheMidWestPlainsman"
+        if channel["id"]
+        == "TheMidWestPlainsman"
     )
+
+    print()
 
     print(
         "THE MID WEST PLAINSMAN: "
@@ -1078,12 +1003,12 @@ def main():
         create_no_schedule_channel(
             plainsman,
             start_time,
-            end_time
+            end_time,
         )
     )
 
     # ========================================================
-    # CLEAN
+    # CLEAN EVENTS
     # ========================================================
 
     all_events = clean_events(
@@ -1091,13 +1016,14 @@ def main():
     )
 
     print()
+
     print(
         f"TOTAL PROGRAMMES: "
         f"{len(all_events)}"
     )
 
     # ========================================================
-    # OUTPUT
+    # GENERATE FILES
     # ========================================================
 
     generate_xml(
@@ -1108,6 +1034,10 @@ def main():
         all_events
     )
 
+    # ========================================================
+    # VALIDATE
+    # ========================================================
+
     if not validate_xml():
 
         raise SystemExit(
@@ -1115,16 +1045,18 @@ def main():
         )
 
     print()
-    print("=" * 70)
+
     print(
         "EPG GENERATION COMPLETE"
     )
+
     print("=" * 70)
 
 
 # ============================================================
-# START
+# RUN
 # ============================================================
 
 if __name__ == "__main__":
     main()
+```

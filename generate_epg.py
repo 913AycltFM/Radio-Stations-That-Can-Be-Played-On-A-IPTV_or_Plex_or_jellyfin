@@ -21,7 +21,7 @@ TIMEZONE = ZoneInfo("America/Chicago")
 DAYS_AHEAD = 30
 
 # Output files
-XML_OUTPUT = "91.3_Ayclt_ FM_radio_guide.xml"
+XML_OUTPUT = "91.3_Ayclt_FM_radio_guide.xml"
 JSON_OUTPUT = "epg.json"
 
 

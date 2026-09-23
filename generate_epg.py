@@ -739,6 +739,72 @@ def clean_events(events):
 
 
 # ============================================================
+# VALIDATE TIMELINES
+# ============================================================
+
+def validate_timelines(events):
+    """
+    Verify that every channel has one non-overlapping timeline.
+
+    XMLTV clients such as Jellyfin and Plex should never receive two
+    programmes occupying the same channel/time range.
+    """
+    grouped = {}
+
+    for event in events:
+        grouped.setdefault(
+            event["channel_id"],
+            []
+        ).append(event)
+
+    errors = []
+
+    for channel_id, channel_events in grouped.items():
+        channel_events.sort(
+            key=lambda event: (
+                event["start"],
+                event["end"],
+            )
+        )
+
+        previous = None
+
+        for event in channel_events:
+            if event["end"] <= event["start"]:
+                errors.append(
+                    f"{channel_id}: invalid interval "
+                    f"{event['start']} -> {event['end']}"
+                )
+
+            if previous is not None and event["start"] < previous["end"]:
+                errors.append(
+                    f"{channel_id}: overlap between "
+                    f"'{previous['title']}' "
+                    f"({previous['start']} -> {previous['end']}) "
+                    f"and '{event['title']}' "
+                    f"({event['start']} -> {event['end']})"
+                )
+
+            previous = event
+
+    if errors:
+        print("TIMELINE VALIDATION FAILED:")
+
+        for error in errors:
+            print(f"  - {error}")
+
+        return False
+
+    print(
+        f"Timeline validation successful: "
+        f"{len(grouped)} channels checked; "
+        f"no overlapping programmes."
+    )
+
+    return True
+
+
+# ============================================================
 # GENERATE XMLTV
 # ============================================================
 
@@ -973,6 +1039,13 @@ def main():
         timedelta(days=DAYS_AHEAD)
     )
 
+    # Fetch the previous calendar day too so overnight programmes
+    # that cross midnight are not lost from the EPG.
+    schedule_start_date = (
+        start_time.date() -
+        timedelta(days=1)
+    )
+
     all_events = []
 
     # ========================================================
@@ -1002,7 +1075,7 @@ def main():
 
         schedules = fetch_station_schedule(
             station_slug,
-            now.date(),
+            schedule_start_date,
             end_time.date(),
         )
 
@@ -1060,7 +1133,7 @@ def main():
 
     fm_schedules = fetch_station_schedule(
         STATIONS["913AycltFM"],
-        now.date(),
+        schedule_start_date,
         end_time.date(),
     )
 
@@ -1134,6 +1207,16 @@ def main():
         f"TOTAL PROGRAMMES: "
         f"{len(all_events)}"
     )
+
+    # ========================================================
+    # FINAL TIMELINE VALIDATION
+    # ========================================================
+
+    if not validate_timelines(all_events):
+        raise SystemExit(
+            "EPG generation stopped because overlapping "
+            "programmes were detected."
+        )
 
     # ========================================================
     # GENERATE FILES

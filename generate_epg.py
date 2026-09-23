@@ -482,25 +482,60 @@ def convert_schedule(channel, schedules):
 # No "No scheduled DJ or program" text is added.
 # ============================================================
 
+def add_filler_blocks(result, channel, start_time, end_time):
+    """
+    Add filler in 30-minute blocks.
+
+    XMLTV/Jellyfin handles many regular, fixed-length programmes
+    better than one enormous filler programme.
+    """
+    current = start_time
+    block_size = timedelta(minutes=30)
+
+    while current < end_time:
+        block_end = min(current + block_size, end_time)
+
+        result.append(
+            {
+                "channel_id": channel["id"],
+                "channel_name": channel["name"],
+                "title": channel["name"],
+                "description": channel["description"],
+                "start": current,
+                "end": block_end,
+                "icon": channel["icon"],
+                "fallback": True,
+            }
+        )
+
+        current = block_end
+
+
 def fill_schedule_gaps(
     channel,
     events,
     start_time,
     end_time,
 ):
+    """
+    Keep real AzuraCast programmes and fill every unscheduled gap
+    with 30-minute filler programmes.
+
+    This guarantees continuous EPG coverage without one-second
+    programmes or huge multi-day filler blocks.
+    """
     result = []
 
     events = sorted(
         events,
-        key=lambda x: x["start"],
+        key=lambda x: (x["start"], x["end"]),
     )
 
     current = start_time
 
     for event in events:
-
-        event_start = event["start"]
-        event_end = event["end"]
+        event_start = max(event["start"], start_time)
+        event_end = min(event["end"], end_time)
 
         if event_end <= start_time:
             continue
@@ -508,87 +543,39 @@ def fill_schedule_gaps(
         if event_start >= end_time:
             break
 
-        if event_start < start_time:
-            event_start = start_time
+        # Ignore an event completely covered by an earlier event.
+        if event_end <= current:
+            continue
 
-        if event_end > end_time:
-            event_end = end_time
+        # If schedules overlap, trim the later event so the XMLTV
+        # timeline remains continuous and non-overlapping.
+        if event_start < current:
+            event_start = current
 
-        # ----------------------------------------------------
-        # FILL GAP BEFORE ACTUAL PROGRAM
-        # ----------------------------------------------------
-
+        # Fill the gap before the real programme in 30-minute blocks.
         if event_start > current:
-
-            result.append(
-                {
-                    "channel_id": channel["id"],
-                    "channel_name": channel["name"],
-
-                    # FILLER TITLE
-                    "title": channel["name"],
-
-                    # FILLER DESCRIPTION
-                    "description": channel["description"],
-
-                    "start": current,
-                    "end": event_start,
-
-                    "icon": channel["icon"],
-
-                    "fallback": True,
-                }
+            add_filler_blocks(
+                result,
+                channel,
+                current,
+                event_start,
             )
-
-            print(
-                f"Filled gap: "
-                f"{current} -> {event_start}"
-            )
-
-        # ----------------------------------------------------
-        # ADD ACTUAL SCHEDULED PROGRAM
-        # ----------------------------------------------------
 
         if event_end > event_start:
-
             actual_event = dict(event)
-
             actual_event["start"] = event_start
             actual_event["end"] = event_end
-
+            actual_event["fallback"] = False
             result.append(actual_event)
-
             current = event_end
 
-    # --------------------------------------------------------
-    # FILL GAP AFTER LAST PROGRAM
-    # --------------------------------------------------------
-
+    # Fill everything after the final real programme.
     if current < end_time:
-
-        result.append(
-            {
-                "channel_id": channel["id"],
-                "channel_name": channel["name"],
-
-                # FILLER TITLE
-                "title": channel["name"],
-
-                # FILLER DESCRIPTION
-                "description": channel["description"],
-
-                "start": current,
-                "end": end_time,
-
-                "icon": channel["icon"],
-
-                "fallback": True,
-            }
-        )
-
-        print(
-            f"Filled final gap: "
-            f"{current} -> {end_time}"
+        add_filler_blocks(
+            result,
+            channel,
+            current,
+            end_time,
         )
 
     return result

@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
 from xml.etree import ElementTree as ET
 from zoneinfo import ZoneInfo
 
@@ -347,24 +348,64 @@ def get_description(item, channel_description):
 # FETCH STATION SCHEDULE
 # ============================================================
 
-def fetch_station_schedule(station_slug):
-    url = (
-        f"{AZURACAST_BASE_URL}"
-        f"/api/station/"
-        f"{station_slug}"
-        f"/schedule"
-    )
+def fetch_station_schedule(
+    station_slug,
+    start_date,
+    end_date,
+):
+    """
+    Fetch the full scheduled lineup for a date range.
 
-    data = fetch_json(url)
+    The plain /schedule endpoint is primarily an "upcoming schedule"
+    feed and may return only a small number of near-term entries.
+    Supplying start/end makes AzuraCast return the scheduled lineup
+    for the requested dates, including recurring DJ/playlist blocks.
 
-    if data is None:
-        return []
+    We use 14-day chunks so the 30-day EPG does not depend on one
+    very large API response.
+    """
+    schedules = []
 
-    schedules = find_schedule_list(data)
+    current_date = start_date
+
+    while current_date <= end_date:
+        chunk_end = min(
+            current_date + timedelta(days=13),
+            end_date,
+        )
+
+        query = urlencode(
+            {
+                "start": current_date.isoformat(),
+                "end": chunk_end.isoformat(),
+            }
+        )
+
+        url = (
+            f"{AZURACAST_BASE_URL}"
+            f"/api/station/"
+            f"{station_slug}"
+            f"/schedule?{query}"
+        )
+
+        data = fetch_json(url)
+
+        if data is not None:
+            chunk = find_schedule_list(data)
+            schedules.extend(chunk)
+
+            print(
+                f"Schedule records received for "
+                f"{current_date.isoformat()} through "
+                f"{chunk_end.isoformat()}: "
+                f"{len(chunk)}"
+            )
+
+        current_date = chunk_end + timedelta(days=1)
 
     print(
-        f"Schedule records received: "
-        f"{len(schedules)}"
+        f"Total schedule records received for "
+        f"{station_slug}: {len(schedules)}"
     )
 
     return schedules
@@ -912,7 +953,9 @@ def main():
         )
 
         schedules = fetch_station_schedule(
-            station_slug
+            station_slug,
+            now.date(),
+            end_time.date(),
         )
 
         actual_events = convert_schedule(
@@ -968,7 +1011,9 @@ def main():
     )
 
     fm_schedules = fetch_station_schedule(
-        STATIONS["913AycltFM"]
+        STATIONS["913AycltFM"],
+        now.date(),
+        end_time.date(),
     )
 
     fm_events = convert_schedule(

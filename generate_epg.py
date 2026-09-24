@@ -1287,14 +1287,19 @@ def main():
     # CALCULATE LIVE BADGE STATE
     # ========================================================
     #
-    # Main 91.3 Ayclt FM has NO LIVE badge on its programmes.
-    # Future/past DJs, regular programmes, and filler on other
-    # non-HD channels expose LIVE metadata.
+    # LIVE rules:
+    # - Current live DJ: LIVE
+    # - Future live DJ: LIVE
+    # - Past live DJ: LIVE
+    # - Regular scheduled programme: no LIVE
+    # - Filler: no LIVE
     #
-    # HD2/HD3: LIVE only when the programme airing right now is
-    # identified by AzuraCast as a live DJ/streamer.
+    # Main 91.3 Ayclt FM and the Live Studio Cam use the live-DJ
+    # schedule, so a scheduled DJ entry keeps LIVE metadata even
+    # when it is in the future or past.
     #
-    # Live Studio Cam follows the FM live-DJ state exactly.
+    # HD2/HD3 are different: LIVE is only set while an actual
+    # live DJ/streamer programme is airing right now.
     #
     # XMLTV cannot draw a visual box itself. The generator exposes
     # LIVE through the category element and JSON live/live_badge
@@ -1308,20 +1313,20 @@ def main():
     for event in all_events:
         channel_id = event["channel_id"]
 
-        if channel_id == fm_channel_id:
-            event["live"] = False
+        if channel_id in {fm_channel_id, studio_channel_id}:
+            # FM and Studio Cam follow the DJ/streamer schedule.
+            # Future and past DJ entries remain LIVE-labelled.
+            event["live"] = bool(event.get("live_program", False))
         elif channel_id in hd_channels:
-            event["live"] = bool(
-                event.get("live_program", False)
-                and event["start"] <= now < event["end"]
-            )
-        elif channel_id == studio_channel_id:
+            # HD2/HD3 only show LIVE for the DJ/streamer that is
+            # actually airing at the current moment.
             event["live"] = bool(
                 event.get("live_program", False)
                 and event["start"] <= now < event["end"]
             )
         else:
-            event["live"] = True
+            # Regular programmes and filler do not get LIVE.
+            event["live"] = False
 
     # ========================================================
     # CLEAN EVENTS

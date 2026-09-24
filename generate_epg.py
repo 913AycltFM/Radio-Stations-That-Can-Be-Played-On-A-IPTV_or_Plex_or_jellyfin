@@ -981,7 +981,7 @@ def generate_xml(events):
                 {
                     "lang": "en"
                 },
-            ).text = "LIVE"
+            ).text = "Live Radio Show"
 
         if event.get("icon"):
 

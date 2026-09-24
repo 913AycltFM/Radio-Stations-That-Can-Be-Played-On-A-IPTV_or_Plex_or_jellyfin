@@ -963,12 +963,20 @@ def generate_xml(events):
         ).text = event["description"]
 
         # Jellyfin's built-in guide LIVE indicator is driven by
-        # the XMLTV <live> element.
+        # the XMLTV <live> element. Keep the LIVE category too for
+        # clients that use XMLTV categories.
         if event.get("live"):
             ET.SubElement(
                 programme,
                 "live"
             )
+            ET.SubElement(
+                programme,
+                "category",
+                {
+                    "lang": "en"
+                },
+            ).text = "LIVE"
 
         if event.get("icon"):
 

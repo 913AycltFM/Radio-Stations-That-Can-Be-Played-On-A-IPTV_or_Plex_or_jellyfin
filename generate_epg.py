@@ -356,10 +356,33 @@ def get_program_title(item, channel_name):
             ],
         )
 
-    if value:
-        return str(value).strip()
+    title = str(value).strip() if value else channel_name
 
-    return channel_name
+    # AzuraCast streamer entries represent live DJ/host programming.
+    # Mark those entries clearly in the EPG so IPTV/Jellyfin viewers
+    # can immediately see which scheduled shows are live.
+    streamer = get_field(
+        item,
+        [
+            "streamer_name",
+            "streamer",
+            "dj_name",
+        ],
+    )
+
+    if isinstance(streamer, dict):
+        streamer = get_field(
+            streamer,
+            [
+                "name",
+                "title",
+            ],
+        )
+
+    if streamer and "live" not in title.lower():
+        title = f"{title} - LIVE"
+
+    return title
 
 
 # ============================================================

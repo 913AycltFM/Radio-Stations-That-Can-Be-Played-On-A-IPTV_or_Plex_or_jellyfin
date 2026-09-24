@@ -89,7 +89,7 @@ CHANNELS = [
 
     {
         "id": "TheMidWestPlainsman",
-        "display": "1.6",
+        "display": "1.5",
         "name": "The Mid West Plainsman",
         "description": (
             "The Mid West Plainsman Is A Media Broadcast Content Creator "

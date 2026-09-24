@@ -358,9 +358,17 @@ def get_program_title(item, channel_name):
 
     title = str(value).strip() if value else channel_name
 
-    # AzuraCast streamer entries represent live DJ/host programming.
-    # Mark those entries clearly in the EPG so IPTV/Jellyfin viewers
-    # can immediately see which scheduled shows are live.
+    # Keep the programme title clean. The live state is stored
+    # separately so a guide interface can render a dedicated
+    # LIVE badge/box next to the programme title.
+    return title
+
+
+# ============================================================
+# DETERMINE WHETHER AN AZURACAST ENTRY IS A LIVE DJ/STREAMER
+# ============================================================
+
+def is_live_program(item):
     streamer = get_field(
         item,
         [
@@ -379,10 +387,7 @@ def get_program_title(item, channel_name):
             ],
         )
 
-    if streamer and "live" not in title.lower():
-        title = f"{title} - LIVE"
-
-    return title
+    return bool(str(streamer).strip()) if streamer else False
 
 
 # ============================================================
@@ -555,6 +560,7 @@ def convert_schedule(channel, schedules, minimum, maximum):
                 "end": end,
                 "icon": channel["icon"],
                 "fallback": False,
+                "live_program": is_live_program(item),
             }
         )
 
@@ -938,6 +944,18 @@ def generate_xml(events):
             },
         ).text = event["description"]
 
+        # XMLTV has no universal visual "LIVE box" element.
+        # The standard category element is used as machine-readable
+        # live metadata without polluting the programme title.
+        if event.get("live"):
+            ET.SubElement(
+                programme,
+                "category",
+                {
+                    "lang": "en"
+                },
+            ).text = "LIVE"
+
         if event.get("icon"):
 
             ET.SubElement(
@@ -1024,6 +1042,8 @@ def generate_json(events):
                 "end": event["end"].isoformat(),
                 "icon": event["icon"],
                 "fallback": event["fallback"],
+                "live": event.get("live", False),
+                "live_badge": "LIVE" if event.get("live", False) else None,
             }
         )
 
@@ -1261,6 +1281,21 @@ def main():
             end_time,
         )
     )
+
+    # ========================================================
+    # CALCULATE CURRENT LIVE STATE
+    # ========================================================
+    #
+    # Only the programme that is actually airing at generation time
+    # gets live=true. Future and past DJ programmes remain clean.
+    # GitHub Actions refreshes the files every 5 minutes.
+    # ========================================================
+
+    for event in all_events:
+        event["live"] = bool(
+            event.get("live_program", False)
+            and event["start"] <= now < event["end"]
+        )
 
     # ========================================================
     # CLEAN EVENTS

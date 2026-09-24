@@ -369,12 +369,16 @@ def get_program_title(item, channel_name):
 # ============================================================
 
 def is_live_program(item):
+    """Return True when an AzuraCast schedule entry represents a DJ/streamer."""
     streamer = get_field(
         item,
         [
             "streamer_name",
             "streamer",
             "dj_name",
+            "dj",
+            "presenter_name",
+            "presenter",
         ],
     )
 
@@ -384,10 +388,24 @@ def is_live_program(item):
             [
                 "name",
                 "title",
+                "display_name",
             ],
         )
 
-    return bool(str(streamer).strip()) if streamer else False
+    if streamer and str(streamer).strip():
+        return True
+
+    # Some AzuraCast schedule responses expose the streamer only in
+    # the generated description, for example: "Streamer: DJ Nicko".
+    # Treat that explicit marker as a live DJ/streamer programme.
+    description = get_field(item, ["description", "desc"])
+    if description:
+        description = str(description).strip()
+        if description.lower().startswith("streamer:"):
+            streamer_name = description.split(":", 1)[1].strip()
+            return bool(streamer_name)
+
+    return False
 
 
 # ============================================================

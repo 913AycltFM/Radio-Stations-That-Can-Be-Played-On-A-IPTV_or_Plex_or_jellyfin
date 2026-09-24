@@ -22,7 +22,7 @@ permissions:
 # Prevent two 5-minute EPG jobs from writing the generated files
 # at the same time.
 concurrency:
-  group: update-epg
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 
@@ -101,6 +101,63 @@ jobs:
           ET.parse(filename)
 
           print(f"XML validation successful: {filename}")
+          PY
+
+
+      # ======================================================
+      # VALIDATE JSON AND CHANNEL COVERAGE
+      # ======================================================
+
+      - name: Validate JSON and channel coverage
+        run: |
+          python - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+
+          expected = {
+              "913AycltFM",
+              "913AycltFMHD2",
+              "913AycltFMHD3",
+              "913AycltFMLiveStudioCam",
+              "TheMidWestPlainsman",
+          }
+
+          with open("epg.json", encoding="utf-8") as f:
+              data = json.load(f)
+
+          if not data:
+              raise SystemExit("EPG JSON is empty.")
+
+          json_channels = {item.get("channel_id") for item in data}
+          missing_json = expected - json_channels
+          if missing_json:
+              raise SystemExit(
+                  f"EPG JSON is missing channels: {sorted(missing_json)}"
+              )
+
+          root = ET.parse("91.3_Ayclt_FM_radio_guide.xml").getroot()
+          xml_channels = {
+              channel.get("id")
+              for channel in root.findall("channel")
+          }
+          missing_xml = expected - xml_channels
+          if missing_xml:
+              raise SystemExit(
+                  f"EPG XML is missing channels: {sorted(missing_xml)}"
+              )
+
+          xml_programmes = root.findall("programme")
+          if not xml_programmes:
+              raise SystemExit("EPG XML contains no programmes.")
+
+          print(
+              f"JSON validation successful: {len(data)} programmes; "
+              f"{len(json_channels)} channels."
+          )
+          print(
+              f"XML validation successful: {len(xml_programmes)} programmes; "
+              f"{len(xml_channels)} channels."
+          )
           PY
 
 

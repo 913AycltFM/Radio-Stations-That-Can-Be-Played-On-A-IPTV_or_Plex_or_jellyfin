@@ -1215,7 +1215,8 @@ def main():
     )
 
     # The Studio Cam uses the same programming schedule as
-    # the main 91.3 Ayclt FM channel.
+    # the main 91.3 Ayclt FM channel. Its LIVE metadata therefore
+    # follows the corresponding FM programme.
     fm_channel = next(
         channel
         for channel in CHANNELS
@@ -1283,19 +1284,35 @@ def main():
     )
 
     # ========================================================
-    # CALCULATE CURRENT LIVE STATE
+    # CALCULATE LIVE BADGE STATE
     # ========================================================
     #
-    # Only the programme that is actually airing at generation time
-    # gets live=true. Future and past DJ programmes remain clean.
+    # Main FM, Live Studio Cam, and the Plainsman channel expose
+    # LIVE metadata on every EPG programme so guide interfaces can
+    # display a LIVE badge/box beside the programme.
+    #
+    # HD2/HD3 are different: only the programme that is actually
+    # airing right now AND is identified by AzuraCast as a live DJ/
+    # streamer receives the LIVE metadata.
+    #
+    # XMLTV itself cannot draw a visual box. The generator exposes
+    # the state through the standard category element and JSON
+    # live/live_badge fields for clients that support them.
     # GitHub Actions refreshes the files every 5 minutes.
     # ========================================================
 
+    hd_channels = {"913AycltFMHD2", "913AycltFMHD3"}
+
     for event in all_events:
-        event["live"] = bool(
-            event.get("live_program", False)
-            and event["start"] <= now < event["end"]
-        )
+        channel_id = event["channel_id"]
+
+        if channel_id in hd_channels:
+            event["live"] = bool(
+                event.get("live_program", False)
+                and event["start"] <= now < event["end"]
+            )
+        else:
+            event["live"] = True
 
     # ========================================================
     # CLEAN EVENTS

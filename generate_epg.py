@@ -562,9 +562,17 @@ def add_filler_blocks(result, channel, start_time, end_time):
     """
     current = start_time
     block_size = timedelta(hours=1)
+    utc = ZoneInfo("UTC")
 
     while current < end_time:
-        block_end = min(current + block_size, end_time)
+        # Advance in absolute time so the repeated hour at the
+        # Central Time DST fallback is represented correctly.
+        current_utc = current.astimezone(utc)
+        block_end_utc = min(
+            current_utc + block_size,
+            end_time.astimezone(utc),
+        )
+        block_end = block_end_utc.astimezone(TIMEZONE)
 
         result.append(
             {

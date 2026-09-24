@@ -401,7 +401,8 @@ def is_live_program(item):
     description = get_field(item, ["description", "desc"])
     if description:
         description = str(description).strip()
-        if description.lower().startswith("streamer:"):
+        if (description.lower().startswith("streamer:")
+                or description.lower().startswith("live dj:")):
             streamer_name = description.split(":", 1)[1].strip()
             return bool(streamer_name)
 
@@ -422,7 +423,11 @@ def get_description(item, channel_description):
     )
 
     if value:
-        return str(value).strip()
+        text = str(value).strip()
+        # Use "Live DJ" as the public-facing label instead of "Streamer".
+        if text.lower().startswith("streamer:"):
+            return "Live DJ:" + text.split(":", 1)[1]
+        return text
 
     return channel_description
 

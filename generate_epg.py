@@ -124,15 +124,24 @@ def fetch_json(url):
             return json.loads(data)
 
     except HTTPError as error:
-        print(f"HTTP ERROR {error.code}: {url}")
+        raise RuntimeError(
+            f"AzuraCast API HTTP error {error.code}: {url}"
+        ) from error
 
     except URLError as error:
-        print(f"URL ERROR: {error.reason}")
+        raise RuntimeError(
+            f"AzuraCast API connection error: {error.reason}"
+        ) from error
+
+    except json.JSONDecodeError as error:
+        raise RuntimeError(
+            f"AzuraCast API returned invalid JSON: {url}"
+        ) from error
 
     except Exception as error:
-        print(f"ERROR: {error}")
-
-    return None
+        raise RuntimeError(
+            f"AzuraCast API request failed: {error}"
+        ) from error
 
 
 # ============================================================
@@ -390,16 +399,18 @@ def fetch_station_schedule(
 
         data = fetch_json(url)
 
-        if data is not None:
-            chunk = find_schedule_list(data)
-            schedules.extend(chunk)
+        # A failed API request must stop generation. Publishing a
+        # filler-only EPG after an API outage could hide a real
+        # schedule and replace the last known-good guide.
+        chunk = find_schedule_list(data)
+        schedules.extend(chunk)
 
-            print(
-                f"Schedule records received for "
-                f"{current_date.isoformat()} through "
-                f"{chunk_end.isoformat()}: "
-                f"{len(chunk)}"
-            )
+        print(
+            f"Schedule records received for "
+            f"{current_date.isoformat()} through "
+            f"{chunk_end.isoformat()}: "
+            f"{len(chunk)}"
+        )
 
         current_date = chunk_end + timedelta(days=1)
 

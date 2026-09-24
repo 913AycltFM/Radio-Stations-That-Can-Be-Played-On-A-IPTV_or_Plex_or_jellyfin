@@ -1287,26 +1287,35 @@ def main():
     # CALCULATE LIVE BADGE STATE
     # ========================================================
     #
-    # Main FM, Live Studio Cam, and the Plainsman channel expose
-    # LIVE metadata on every EPG programme so guide interfaces can
-    # display a LIVE badge/box beside the programme.
+    # Main 91.3 Ayclt FM has NO LIVE badge on its programmes.
+    # Future/past DJs, regular programmes, and filler on other
+    # non-HD channels expose LIVE metadata.
     #
-    # HD2/HD3 are different: only the programme that is actually
-    # airing right now AND is identified by AzuraCast as a live DJ/
-    # streamer receives the LIVE metadata.
+    # HD2/HD3: LIVE only when the programme airing right now is
+    # identified by AzuraCast as a live DJ/streamer.
     #
-    # XMLTV itself cannot draw a visual box. The generator exposes
-    # the state through the standard category element and JSON
-    # live/live_badge fields for clients that support them.
-    # GitHub Actions refreshes the files every 5 minutes.
+    # Live Studio Cam follows the FM live-DJ state exactly.
+    #
+    # XMLTV cannot draw a visual box itself. The generator exposes
+    # LIVE through the category element and JSON live/live_badge
+    # fields for clients that support them.
     # ========================================================
 
     hd_channels = {"913AycltFMHD2", "913AycltFMHD3"}
+    fm_channel_id = "913AycltFM"
+    studio_channel_id = "913AycltFMLiveStudioCam"
 
     for event in all_events:
         channel_id = event["channel_id"]
 
-        if channel_id in hd_channels:
+        if channel_id == fm_channel_id:
+            event["live"] = False
+        elif channel_id in hd_channels:
+            event["live"] = bool(
+                event.get("live_program", False)
+                and event["start"] <= now < event["end"]
+            )
+        elif channel_id == studio_channel_id:
             event["live"] = bool(
                 event.get("live_program", False)
                 and event["start"] <= now < event["end"]

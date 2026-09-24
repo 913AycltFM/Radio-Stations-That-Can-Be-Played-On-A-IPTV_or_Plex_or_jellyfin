@@ -19,6 +19,13 @@ permissions:
   contents: write
 
 
+# Prevent two 5-minute EPG jobs from writing the generated files
+# at the same time.
+concurrency:
+  group: update-epg
+  cancel-in-progress: true
+
+
 jobs:
   update-epg:
 

@@ -1029,13 +1029,17 @@ def main():
         TIMEZONE
     )
 
-    start_time = (
-        now -
-        timedelta(minutes=10)
+    # Align the rolling EPG to the start of the current hour.
+    # This prevents the XML/JSON timestamps from changing every
+    # time the 5-minute GitHub Actions job runs.
+    start_time = now.replace(
+        minute=0,
+        second=0,
+        microsecond=0,
     )
 
     end_time = (
-        now +
+        start_time +
         timedelta(days=DAYS_AHEAD)
     )
 

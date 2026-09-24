@@ -1041,9 +1041,11 @@ def generate_json(events):
                 "start": event["start"].isoformat(),
                 "end": event["end"].isoformat(),
                 "icon": event["icon"],
+                # DJ/live entries get the explicit LIVE badge.
+                # Regular programmes and filler have no badge.
                 "fallback": event["fallback"],
                 "live": event.get("live", False),
-                "live_badge": "LIVE" if event.get("live", False) else None,
+                "live_badge": "LIVE" if event.get("live", False) else "",
             }
         )
 

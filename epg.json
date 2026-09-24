@@ -4,12 +4,12 @@
     "station_name": "91.3 Ayclt FM",
     "title": "Rock Doc",
     "description": "Streamer: Rock Doc",
-    "start": "2026-09-24T11:00:00-05:00",
+    "start": "2026-09-24T12:00:00-05:00",
     "end": "2026-09-24T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -20,8 +20,8 @@
     "end": "2026-09-24T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -32,8 +32,8 @@
     "end": "2026-09-24T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -44,8 +44,8 @@
     "end": "2026-09-24T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -56,8 +56,8 @@
     "end": "2026-09-24T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -68,8 +68,8 @@
     "end": "2026-09-24T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -80,8 +80,8 @@
     "end": "2026-09-24T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -92,8 +92,8 @@
     "end": "2026-09-24T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -104,8 +104,8 @@
     "end": "2026-09-25T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -116,8 +116,8 @@
     "end": "2026-09-25T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -128,8 +128,8 @@
     "end": "2026-09-25T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -140,8 +140,8 @@
     "end": "2026-09-25T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -152,8 +152,8 @@
     "end": "2026-09-25T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -164,8 +164,8 @@
     "end": "2026-09-25T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -176,8 +176,8 @@
     "end": "2026-09-25T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -188,8 +188,8 @@
     "end": "2026-09-25T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -200,8 +200,8 @@
     "end": "2026-09-25T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -212,8 +212,8 @@
     "end": "2026-09-25T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -224,8 +224,8 @@
     "end": "2026-09-25T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -236,8 +236,8 @@
     "end": "2026-09-25T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -248,8 +248,8 @@
     "end": "2026-09-25T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -260,8 +260,8 @@
     "end": "2026-09-25T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -272,8 +272,8 @@
     "end": "2026-09-25T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -284,8 +284,8 @@
     "end": "2026-09-25T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -296,8 +296,8 @@
     "end": "2026-09-25T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -308,8 +308,8 @@
     "end": "2026-09-25T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -320,8 +320,8 @@
     "end": "2026-09-26T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -332,8 +332,8 @@
     "end": "2026-09-26T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -344,8 +344,8 @@
     "end": "2026-09-26T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -356,8 +356,8 @@
     "end": "2026-09-26T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -368,8 +368,8 @@
     "end": "2026-09-26T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -380,8 +380,8 @@
     "end": "2026-09-26T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -392,8 +392,8 @@
     "end": "2026-09-26T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -404,8 +404,8 @@
     "end": "2026-09-26T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -416,8 +416,8 @@
     "end": "2026-09-26T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -428,8 +428,8 @@
     "end": "2026-09-26T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -440,8 +440,8 @@
     "end": "2026-09-26T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -452,8 +452,8 @@
     "end": "2026-09-26T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -464,8 +464,8 @@
     "end": "2026-09-26T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -476,8 +476,8 @@
     "end": "2026-09-26T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -488,8 +488,8 @@
     "end": "2026-09-26T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -500,8 +500,8 @@
     "end": "2026-09-26T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -512,8 +512,8 @@
     "end": "2026-09-26T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -524,8 +524,8 @@
     "end": "2026-09-26T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -536,8 +536,8 @@
     "end": "2026-09-26T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -548,8 +548,8 @@
     "end": "2026-09-26T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -560,8 +560,8 @@
     "end": "2026-09-26T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -572,8 +572,8 @@
     "end": "2026-09-27T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -584,8 +584,8 @@
     "end": "2026-09-27T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -596,8 +596,8 @@
     "end": "2026-09-27T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -608,8 +608,8 @@
     "end": "2026-09-27T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -620,8 +620,8 @@
     "end": "2026-09-27T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -632,8 +632,8 @@
     "end": "2026-09-27T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -644,8 +644,8 @@
     "end": "2026-09-27T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -656,8 +656,8 @@
     "end": "2026-09-27T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -668,8 +668,8 @@
     "end": "2026-09-27T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -680,8 +680,8 @@
     "end": "2026-09-27T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -692,8 +692,8 @@
     "end": "2026-09-27T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -704,8 +704,8 @@
     "end": "2026-09-27T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -716,8 +716,8 @@
     "end": "2026-09-27T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -728,8 +728,8 @@
     "end": "2026-09-27T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -740,8 +740,8 @@
     "end": "2026-09-27T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -752,8 +752,8 @@
     "end": "2026-09-27T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -764,8 +764,8 @@
     "end": "2026-09-27T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -776,8 +776,8 @@
     "end": "2026-09-27T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -788,8 +788,8 @@
     "end": "2026-09-27T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -800,8 +800,8 @@
     "end": "2026-09-27T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -812,8 +812,8 @@
     "end": "2026-09-27T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -824,8 +824,8 @@
     "end": "2026-09-27T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -836,8 +836,8 @@
     "end": "2026-09-27T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -848,8 +848,8 @@
     "end": "2026-09-28T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -860,8 +860,8 @@
     "end": "2026-09-28T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -872,8 +872,8 @@
     "end": "2026-09-28T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -884,8 +884,8 @@
     "end": "2026-09-28T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -896,8 +896,8 @@
     "end": "2026-09-28T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -908,8 +908,8 @@
     "end": "2026-09-28T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -920,8 +920,8 @@
     "end": "2026-09-28T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -932,8 +932,8 @@
     "end": "2026-09-28T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -944,8 +944,8 @@
     "end": "2026-09-28T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -956,8 +956,8 @@
     "end": "2026-09-28T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -968,8 +968,8 @@
     "end": "2026-09-28T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -980,8 +980,8 @@
     "end": "2026-09-28T12:30:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -992,8 +992,8 @@
     "end": "2026-09-28T14:30:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1004,8 +1004,8 @@
     "end": "2026-09-28T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1016,8 +1016,8 @@
     "end": "2026-09-28T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1028,8 +1028,8 @@
     "end": "2026-09-28T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1040,8 +1040,8 @@
     "end": "2026-09-28T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1052,8 +1052,8 @@
     "end": "2026-09-28T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1064,8 +1064,8 @@
     "end": "2026-09-28T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1076,8 +1076,8 @@
     "end": "2026-09-28T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1088,8 +1088,8 @@
     "end": "2026-09-28T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1100,8 +1100,8 @@
     "end": "2026-09-29T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1112,8 +1112,8 @@
     "end": "2026-09-29T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1124,8 +1124,8 @@
     "end": "2026-09-29T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1136,8 +1136,8 @@
     "end": "2026-09-29T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1148,8 +1148,8 @@
     "end": "2026-09-29T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1160,8 +1160,8 @@
     "end": "2026-09-29T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1172,8 +1172,8 @@
     "end": "2026-09-29T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1184,8 +1184,8 @@
     "end": "2026-09-29T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1196,8 +1196,8 @@
     "end": "2026-09-29T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1208,8 +1208,8 @@
     "end": "2026-09-29T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1220,8 +1220,8 @@
     "end": "2026-09-29T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1232,8 +1232,8 @@
     "end": "2026-09-29T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1244,8 +1244,8 @@
     "end": "2026-09-29T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1256,8 +1256,8 @@
     "end": "2026-09-29T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1268,8 +1268,8 @@
     "end": "2026-09-29T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1280,8 +1280,8 @@
     "end": "2026-09-29T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1292,8 +1292,8 @@
     "end": "2026-09-29T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1304,8 +1304,8 @@
     "end": "2026-09-29T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1316,8 +1316,8 @@
     "end": "2026-09-29T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1328,8 +1328,8 @@
     "end": "2026-09-29T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1340,8 +1340,8 @@
     "end": "2026-09-29T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1352,8 +1352,8 @@
     "end": "2026-09-30T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1364,8 +1364,8 @@
     "end": "2026-09-30T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1376,8 +1376,8 @@
     "end": "2026-09-30T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1388,8 +1388,8 @@
     "end": "2026-09-30T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1400,8 +1400,8 @@
     "end": "2026-09-30T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1412,8 +1412,8 @@
     "end": "2026-09-30T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1424,8 +1424,8 @@
     "end": "2026-09-30T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1436,8 +1436,8 @@
     "end": "2026-09-30T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1448,8 +1448,8 @@
     "end": "2026-09-30T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1460,8 +1460,8 @@
     "end": "2026-09-30T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1472,8 +1472,8 @@
     "end": "2026-09-30T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1484,8 +1484,8 @@
     "end": "2026-09-30T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1496,8 +1496,8 @@
     "end": "2026-09-30T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1508,8 +1508,8 @@
     "end": "2026-09-30T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1520,8 +1520,8 @@
     "end": "2026-09-30T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1532,8 +1532,8 @@
     "end": "2026-09-30T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1544,8 +1544,8 @@
     "end": "2026-09-30T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1556,8 +1556,8 @@
     "end": "2026-09-30T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1568,8 +1568,8 @@
     "end": "2026-09-30T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1580,8 +1580,8 @@
     "end": "2026-09-30T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1592,8 +1592,8 @@
     "end": "2026-09-30T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1604,8 +1604,8 @@
     "end": "2026-10-01T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1616,8 +1616,8 @@
     "end": "2026-10-01T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1628,8 +1628,8 @@
     "end": "2026-10-01T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1640,8 +1640,8 @@
     "end": "2026-10-01T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1652,8 +1652,8 @@
     "end": "2026-10-01T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1664,8 +1664,8 @@
     "end": "2026-10-01T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1676,8 +1676,8 @@
     "end": "2026-10-01T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1688,8 +1688,8 @@
     "end": "2026-10-01T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1700,8 +1700,8 @@
     "end": "2026-10-01T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFM",
@@ -1709,21 +1709,9 @@
     "title": "Rock Doc",
     "description": "Streamer: Rock Doc",
     "start": "2026-10-01T09:00:00-05:00",
-    "end": "2026-10-01T11:00:00-05:00",
+    "end": "2026-10-01T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
-  },
-  {
-    "channel_id": "913AycltFMHD2",
-    "station_name": "91.3 Ayclt FM HD2",
-    "title": "91.3 Ayclt FM HD2",
-    "description": "Dickinson's Texas #1 Hit Music Station",
-    "start": "2026-09-24T11:00:00-05:00",
-    "end": "2026-09-24T12:00:00-05:00",
-    "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png",
-    "fallback": true,
     "live": false,
     "live_badge": null
   },
@@ -3732,13 +3720,13 @@
     "live_badge": null
   },
   {
-    "channel_id": "913AycltFMHD3",
-    "station_name": "91.3 Ayclt FM HD3",
-    "title": "91.3 Ayclt FM HD3",
+    "channel_id": "913AycltFMHD2",
+    "station_name": "91.3 Ayclt FM HD2",
+    "title": "91.3 Ayclt FM HD2",
     "description": "Dickinson's Texas #1 Hit Music Station",
-    "start": "2026-09-24T11:00:00-05:00",
-    "end": "2026-09-24T12:00:00-05:00",
-    "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png",
+    "start": "2026-10-01T11:00:00-05:00",
+    "end": "2026-10-01T12:00:00-05:00",
+    "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png",
     "fallback": true,
     "live": false,
     "live_badge": null
@@ -5748,16 +5736,28 @@
     "live_badge": null
   },
   {
+    "channel_id": "913AycltFMHD3",
+    "station_name": "91.3 Ayclt FM HD3",
+    "title": "91.3 Ayclt FM HD3",
+    "description": "Dickinson's Texas #1 Hit Music Station",
+    "start": "2026-10-01T11:00:00-05:00",
+    "end": "2026-10-01T12:00:00-05:00",
+    "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png",
+    "fallback": true,
+    "live": false,
+    "live_badge": null
+  },
+  {
     "channel_id": "913AycltFMLiveStudioCam",
     "station_name": "91.3 Ayclt FM Live Studio Cam",
     "title": "Rock Doc",
     "description": "Streamer: Rock Doc",
-    "start": "2026-09-24T11:00:00-05:00",
+    "start": "2026-09-24T12:00:00-05:00",
     "end": "2026-09-24T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5768,8 +5768,8 @@
     "end": "2026-09-24T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5780,8 +5780,8 @@
     "end": "2026-09-24T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5792,8 +5792,8 @@
     "end": "2026-09-24T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5804,8 +5804,8 @@
     "end": "2026-09-24T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5816,8 +5816,8 @@
     "end": "2026-09-24T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5828,8 +5828,8 @@
     "end": "2026-09-24T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5840,8 +5840,8 @@
     "end": "2026-09-24T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5852,8 +5852,8 @@
     "end": "2026-09-25T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5864,8 +5864,8 @@
     "end": "2026-09-25T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5876,8 +5876,8 @@
     "end": "2026-09-25T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5888,8 +5888,8 @@
     "end": "2026-09-25T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5900,8 +5900,8 @@
     "end": "2026-09-25T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5912,8 +5912,8 @@
     "end": "2026-09-25T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5924,8 +5924,8 @@
     "end": "2026-09-25T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5936,8 +5936,8 @@
     "end": "2026-09-25T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5948,8 +5948,8 @@
     "end": "2026-09-25T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5960,8 +5960,8 @@
     "end": "2026-09-25T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5972,8 +5972,8 @@
     "end": "2026-09-25T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5984,8 +5984,8 @@
     "end": "2026-09-25T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -5996,8 +5996,8 @@
     "end": "2026-09-25T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6008,8 +6008,8 @@
     "end": "2026-09-25T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6020,8 +6020,8 @@
     "end": "2026-09-25T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6032,8 +6032,8 @@
     "end": "2026-09-25T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6044,8 +6044,8 @@
     "end": "2026-09-25T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6056,8 +6056,8 @@
     "end": "2026-09-25T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6068,8 +6068,8 @@
     "end": "2026-09-26T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6080,8 +6080,8 @@
     "end": "2026-09-26T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6092,8 +6092,8 @@
     "end": "2026-09-26T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6104,8 +6104,8 @@
     "end": "2026-09-26T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6116,8 +6116,8 @@
     "end": "2026-09-26T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6128,8 +6128,8 @@
     "end": "2026-09-26T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6140,8 +6140,8 @@
     "end": "2026-09-26T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6152,8 +6152,8 @@
     "end": "2026-09-26T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6164,8 +6164,8 @@
     "end": "2026-09-26T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6176,8 +6176,8 @@
     "end": "2026-09-26T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6188,8 +6188,8 @@
     "end": "2026-09-26T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6200,8 +6200,8 @@
     "end": "2026-09-26T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6212,8 +6212,8 @@
     "end": "2026-09-26T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6224,8 +6224,8 @@
     "end": "2026-09-26T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6236,8 +6236,8 @@
     "end": "2026-09-26T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6248,8 +6248,8 @@
     "end": "2026-09-26T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6260,8 +6260,8 @@
     "end": "2026-09-26T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6272,8 +6272,8 @@
     "end": "2026-09-26T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6284,8 +6284,8 @@
     "end": "2026-09-26T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6296,8 +6296,8 @@
     "end": "2026-09-26T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6308,8 +6308,8 @@
     "end": "2026-09-26T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6320,8 +6320,8 @@
     "end": "2026-09-27T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6332,8 +6332,8 @@
     "end": "2026-09-27T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6344,8 +6344,8 @@
     "end": "2026-09-27T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6356,8 +6356,8 @@
     "end": "2026-09-27T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6368,8 +6368,8 @@
     "end": "2026-09-27T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6380,8 +6380,8 @@
     "end": "2026-09-27T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6392,8 +6392,8 @@
     "end": "2026-09-27T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6404,8 +6404,8 @@
     "end": "2026-09-27T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6416,8 +6416,8 @@
     "end": "2026-09-27T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6428,8 +6428,8 @@
     "end": "2026-09-27T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6440,8 +6440,8 @@
     "end": "2026-09-27T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6452,8 +6452,8 @@
     "end": "2026-09-27T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6464,8 +6464,8 @@
     "end": "2026-09-27T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6476,8 +6476,8 @@
     "end": "2026-09-27T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6488,8 +6488,8 @@
     "end": "2026-09-27T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6500,8 +6500,8 @@
     "end": "2026-09-27T16:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6512,8 +6512,8 @@
     "end": "2026-09-27T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6524,8 +6524,8 @@
     "end": "2026-09-27T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6536,8 +6536,8 @@
     "end": "2026-09-27T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6548,8 +6548,8 @@
     "end": "2026-09-27T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6560,8 +6560,8 @@
     "end": "2026-09-27T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6572,8 +6572,8 @@
     "end": "2026-09-27T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6584,8 +6584,8 @@
     "end": "2026-09-27T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6596,8 +6596,8 @@
     "end": "2026-09-28T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6608,8 +6608,8 @@
     "end": "2026-09-28T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6620,8 +6620,8 @@
     "end": "2026-09-28T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6632,8 +6632,8 @@
     "end": "2026-09-28T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6644,8 +6644,8 @@
     "end": "2026-09-28T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6656,8 +6656,8 @@
     "end": "2026-09-28T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6668,8 +6668,8 @@
     "end": "2026-09-28T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6680,8 +6680,8 @@
     "end": "2026-09-28T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6692,8 +6692,8 @@
     "end": "2026-09-28T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6704,8 +6704,8 @@
     "end": "2026-09-28T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6716,8 +6716,8 @@
     "end": "2026-09-28T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6728,8 +6728,8 @@
     "end": "2026-09-28T12:30:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6740,8 +6740,8 @@
     "end": "2026-09-28T14:30:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6752,8 +6752,8 @@
     "end": "2026-09-28T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6764,8 +6764,8 @@
     "end": "2026-09-28T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6776,8 +6776,8 @@
     "end": "2026-09-28T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6788,8 +6788,8 @@
     "end": "2026-09-28T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6800,8 +6800,8 @@
     "end": "2026-09-28T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6812,8 +6812,8 @@
     "end": "2026-09-28T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6824,8 +6824,8 @@
     "end": "2026-09-28T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6836,8 +6836,8 @@
     "end": "2026-09-28T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6848,8 +6848,8 @@
     "end": "2026-09-29T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6860,8 +6860,8 @@
     "end": "2026-09-29T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6872,8 +6872,8 @@
     "end": "2026-09-29T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6884,8 +6884,8 @@
     "end": "2026-09-29T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6896,8 +6896,8 @@
     "end": "2026-09-29T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6908,8 +6908,8 @@
     "end": "2026-09-29T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6920,8 +6920,8 @@
     "end": "2026-09-29T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6932,8 +6932,8 @@
     "end": "2026-09-29T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6944,8 +6944,8 @@
     "end": "2026-09-29T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6956,8 +6956,8 @@
     "end": "2026-09-29T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6968,8 +6968,8 @@
     "end": "2026-09-29T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6980,8 +6980,8 @@
     "end": "2026-09-29T13:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -6992,8 +6992,8 @@
     "end": "2026-09-29T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7004,8 +7004,8 @@
     "end": "2026-09-29T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7016,8 +7016,8 @@
     "end": "2026-09-29T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7028,8 +7028,8 @@
     "end": "2026-09-29T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7040,8 +7040,8 @@
     "end": "2026-09-29T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7052,8 +7052,8 @@
     "end": "2026-09-29T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7064,8 +7064,8 @@
     "end": "2026-09-29T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7076,8 +7076,8 @@
     "end": "2026-09-29T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7088,8 +7088,8 @@
     "end": "2026-09-29T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7100,8 +7100,8 @@
     "end": "2026-09-30T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7112,8 +7112,8 @@
     "end": "2026-09-30T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7124,8 +7124,8 @@
     "end": "2026-09-30T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7136,8 +7136,8 @@
     "end": "2026-09-30T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7148,8 +7148,8 @@
     "end": "2026-09-30T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7160,8 +7160,8 @@
     "end": "2026-09-30T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7172,8 +7172,8 @@
     "end": "2026-09-30T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7184,8 +7184,8 @@
     "end": "2026-09-30T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7196,8 +7196,8 @@
     "end": "2026-09-30T08:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7208,8 +7208,8 @@
     "end": "2026-09-30T10:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7220,8 +7220,8 @@
     "end": "2026-09-30T11:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7232,8 +7232,8 @@
     "end": "2026-09-30T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7244,8 +7244,8 @@
     "end": "2026-09-30T14:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7256,8 +7256,8 @@
     "end": "2026-09-30T15:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7268,8 +7268,8 @@
     "end": "2026-09-30T17:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7280,8 +7280,8 @@
     "end": "2026-09-30T18:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7292,8 +7292,8 @@
     "end": "2026-09-30T19:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7304,8 +7304,8 @@
     "end": "2026-09-30T20:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7316,8 +7316,8 @@
     "end": "2026-09-30T21:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7328,8 +7328,8 @@
     "end": "2026-09-30T22:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7340,8 +7340,8 @@
     "end": "2026-09-30T23:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7352,8 +7352,8 @@
     "end": "2026-10-01T00:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7364,8 +7364,8 @@
     "end": "2026-10-01T01:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7376,8 +7376,8 @@
     "end": "2026-10-01T02:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7388,8 +7388,8 @@
     "end": "2026-10-01T03:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7400,8 +7400,8 @@
     "end": "2026-10-01T04:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7412,8 +7412,8 @@
     "end": "2026-10-01T05:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7424,8 +7424,8 @@
     "end": "2026-10-01T06:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7436,8 +7436,8 @@
     "end": "2026-10-01T07:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": true,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7448,8 +7448,8 @@
     "end": "2026-10-01T09:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "913AycltFMLiveStudioCam",
@@ -7457,19 +7457,19 @@
     "title": "Rock Doc",
     "description": "Streamer: Rock Doc",
     "start": "2026-10-01T09:00:00-05:00",
-    "end": "2026-10-01T11:00:00-05:00",
+    "end": "2026-10-01T12:00:00-05:00",
     "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
     "fallback": false,
-    "live": true,
-    "live_badge": "LIVE"
+    "live": false,
+    "live_badge": null
   },
   {
     "channel_id": "TheMidWestPlainsman",
     "station_name": "The Mid West Plainsman",
     "title": "The Mid West Plainsman",
     "description": "The Mid West Plainsman Is A Media Broadcast Content Creator In Waterloo, Iowa Covering Everything In The Cedar Valley Corridor and Central Iowa",
-    "start": "2026-09-24T11:00:00-05:00",
-    "end": "2026-10-01T11:00:00-05:00",
+    "start": "2026-09-24T12:00:00-05:00",
+    "end": "2026-10-01T12:00:00-05:00",
     "icon": "https://mp3tourl.com/images/1790116455920-0030dd1a-85d7-401a-bb1b-8cdb4160da9a.png",
     "fallback": true,
     "live": true,

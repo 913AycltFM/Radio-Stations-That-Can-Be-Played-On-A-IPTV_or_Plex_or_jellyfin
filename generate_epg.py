@@ -1,6 +1,7 @@
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
+import time
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
@@ -118,30 +119,57 @@ def fetch_json(url):
         },
     )
 
-    try:
-        with urlopen(request, timeout=30) as response:
-            data = response.read().decode("utf-8-sig")
-            return json.loads(data)
+    max_attempts = 3
+    retry_delays = (2, 5)
 
-    except HTTPError as error:
-        raise RuntimeError(
-            f"AzuraCast API HTTP error {error.code}: {url}"
-        ) from error
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with urlopen(request, timeout=30) as response:
+                data = response.read().decode("utf-8-sig")
+                return json.loads(data)
 
-    except URLError as error:
-        raise RuntimeError(
-            f"AzuraCast API connection error: {error.reason}"
-        ) from error
+        except HTTPError as error:
+            if error.code not in (429,) and not 500 <= error.code <= 599:
+                raise RuntimeError(
+                    f"AzuraCast API HTTP error {error.code}: {url}"
+                ) from error
 
-    except json.JSONDecodeError as error:
-        raise RuntimeError(
-            f"AzuraCast API returned invalid JSON: {url}"
-        ) from error
+            if attempt == max_attempts:
+                raise RuntimeError(
+                    f"AzuraCast API HTTP error {error.code} after "
+                    f"{max_attempts} attempts: {url}"
+                ) from error
 
-    except Exception as error:
-        raise RuntimeError(
-            f"AzuraCast API request failed: {error}"
-        ) from error
+            delay = retry_delays[attempt - 1]
+            print(
+                f"Transient HTTP error {error.code}; retrying in {delay}s "
+                f"({attempt + 1}/{max_attempts})..."
+            )
+            time.sleep(delay)
+
+        except URLError as error:
+            if attempt == max_attempts:
+                raise RuntimeError(
+                    f"AzuraCast API connection error after "
+                    f"{max_attempts} attempts: {error.reason}"
+                ) from error
+
+            delay = retry_delays[attempt - 1]
+            print(
+                f"Transient connection error; retrying in {delay}s "
+                f"({attempt + 1}/{max_attempts})..."
+            )
+            time.sleep(delay)
+
+        except json.JSONDecodeError as error:
+            raise RuntimeError(
+                f"AzuraCast API returned invalid JSON: {url}"
+            ) from error
+
+        except Exception as error:
+            raise RuntimeError(
+                f"AzuraCast API request failed: {error}"
+            ) from error
 
 
 # ============================================================
@@ -426,17 +454,8 @@ def fetch_station_schedule(
 # CONVERT AZURACAST SCHEDULE TO EPG EVENTS
 # ============================================================
 
-def convert_schedule(channel, schedules):
+def convert_schedule(channel, schedules, minimum, maximum):
     events = []
-
-    now = datetime.now(TIMEZONE)
-
-    minimum = now - timedelta(minutes=10)
-
-    maximum = (
-        now +
-        timedelta(days=DAYS_AHEAD)
-    )
 
     for item in schedules:
 
@@ -1062,6 +1081,7 @@ def main():
     )
 
     all_events = []
+    schedule_cache = {}
 
     # ========================================================
     # PROCESS AZURACAST STATIONS
@@ -1088,15 +1108,20 @@ def main():
             f"{channel['name']}"
         )
 
-        schedules = fetch_station_schedule(
-            station_slug,
-            schedule_start_date,
-            end_time.date(),
-        )
+        if station_slug not in schedule_cache:
+            schedule_cache[station_slug] = fetch_station_schedule(
+                station_slug,
+                schedule_start_date,
+                end_time.date(),
+            )
+
+        schedules = schedule_cache[station_slug]
 
         actual_events = convert_schedule(
             channel,
             schedules,
+            start_time,
+            end_time,
         )
 
         print(
@@ -1146,15 +1171,13 @@ def main():
         if channel["id"] == "913AycltFM"
     )
 
-    fm_schedules = fetch_station_schedule(
-        STATIONS["913AycltFM"],
-        schedule_start_date,
-        end_time.date(),
-    )
+    fm_schedules = schedule_cache[STATIONS["913AycltFM"]]
 
     fm_events = convert_schedule(
         fm_channel,
         fm_schedules,
+        start_time,
+        end_time,
     )
 
     studio_events = []

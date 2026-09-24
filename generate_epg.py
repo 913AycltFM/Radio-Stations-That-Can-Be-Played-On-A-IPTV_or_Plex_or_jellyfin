@@ -962,10 +962,14 @@ def generate_xml(events):
             },
         ).text = event["description"]
 
-        # XMLTV has no universal visual "LIVE box" element.
-        # The standard category element is used as machine-readable
-        # live metadata without polluting the programme title.
+        # Jellyfin's built-in guide LIVE indicator is driven by
+        # the XMLTV <live> element. Keep the LIVE category too for
+        # clients that use XMLTV categories.
         if event.get("live"):
+            ET.SubElement(
+                programme,
+                "live"
+            )
             ET.SubElement(
                 programme,
                 "category",

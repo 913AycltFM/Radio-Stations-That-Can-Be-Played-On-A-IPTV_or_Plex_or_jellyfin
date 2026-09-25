@@ -255,16 +255,22 @@ def generate_xml(events):
         ET.SubElement(channel_element, "display-name").text = channel["name"]
     for event in events:
         programme = ET.SubElement(root, "programme", {"start": xmltv_datetime(event["start"]), "stop": xmltv_datetime(event["end"]), "channel": event["channel_id"]})
-        ET.SubElement(programme, "title", {"lang": "en"}).text = event["title"]
+        is_live = event.get("live_program", False)
+
+        # Mobile-friendly LIVE fallback:
+        # Android/iPhone clients may not render XMLTV <live/> as a badge.
+        # Prefix the visible title while retaining the standard live metadata
+        # for clients that do support the marker.
+        display_title = f"[LIVE] {event['title']}" if is_live else event["title"]
+        ET.SubElement(programme, "title", {"lang": "en"}).text = display_title
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
-        # Live programs use <live/> followed immediately by <new/>.
-        # Keep both markers after the icon so <live/> is not lost or moved.
-        if event.get("live_program", False):
-            # XMLTV live marker used by Jellyfin-compatible clients.
+        # Keep multiple LIVE signals for broad Jellyfin client compatibility.
+        if is_live:
             ET.SubElement(programme, "live")
             ET.SubElement(programme, "category", {"lang": "en"}).text = "LIVE"
+            ET.SubElement(programme, "sub-title", {"lang": "en"}).text = "LIVE"
             ET.SubElement(programme, "new")
     try:
         ET.indent(root, space="  ")
@@ -293,6 +299,11 @@ def generate_json(events):
             "icon": event["icon"], "fallback": event["fallback"],
             "live": event.get("live_program", False),
             "live_badge": "LIVE" if event.get("live_program", False) else "",
+            "display_title": (
+                f"[LIVE] {event['title']}"
+                if event.get("live_program", False)
+                else event["title"]
+            ),
         })
     Path(JSON_OUTPUT).write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
 

@@ -981,13 +981,7 @@ def generate_xml(events):
                 {
                     "lang": "en"
                 },
-            ).text = "Live"
-            ET.SubElement(
-                programme,
-                "category",
-                {"lang": "en"},
-            ).text = "Live Radio Show"
-
+            ).text = "LIVE"
         if event.get("icon"):
 
             ET.SubElement(

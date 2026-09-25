@@ -259,9 +259,11 @@ def generate_xml(events):
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
-        # Keep the live marker as the final element in the programme block.
+        # Live programs use <live/> followed immediately by <new/>.
+        # Keep both markers after the icon so <live/> is not lost or moved.
         if event.get("live_program", False):
             ET.SubElement(programme, "live")
+            ET.SubElement(programme, "new")
     try:
         ET.indent(root, space="  ")
     except AttributeError:
@@ -272,9 +274,10 @@ def generate_xml(events):
     xml = xml.replace("<?xml version='1.0' encoding='utf-8'?>", '<?xml version="1.0" encoding="utf-8"?>', 1)
     if "<!DOCTYPE tv SYSTEM" not in xml:
         xml = xml.replace('<?xml version="1.0" encoding="utf-8"?>', '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE tv SYSTEM "xmltv.dtd">', 1)
-    # ElementTree writes an empty element as <live />. Normalize only that
-    # marker so the generated guide uses the exact requested <live/> form.
+    # ElementTree writes empty elements with a space; normalize only these
+    # two markers to the exact requested XMLTV form.
     xml = xml.replace("<live />", "<live/>")
+    xml = xml.replace("<new />", "<new/>")
     path.write_text(xml, encoding="utf-8")
 
 
@@ -311,10 +314,6 @@ def main():
 
     for channel in CHANNELS:
         channel_id = channel["id"]
-
-        # AzuraCast-backed channels use their station schedule.
-        # Channels that are not hosted in AzuraCast still MUST receive
-        # a valid EPG timeline so JSON/XML channel coverage stays complete.
         if channel_id not in STATIONS:
             all_events.extend(create_no_schedule_channel(channel, start_time, end_time))
             continue
@@ -332,24 +331,19 @@ def main():
             fill_schedule_gaps(channel, actual_events, start_time, end_time)
         )
 
+    # Live Studio Cam mirrors the FM live-DJ schedule only.
     live_cam = next(channel for channel in CHANNELS if channel["id"] == "913AycltFMLiveStudioCam")
     fm_channel = next(channel for channel in CHANNELS if channel["id"] == "913AycltFM")
-
-    # The Live Studio Cam mirrors the FM schedule. Do not duplicate the
-    # already-generated fallback/filler timeline for the camera; rebuild its
-    # timeline from the actual FM schedule only.
     all_events = [
         event for event in all_events
         if event["channel_id"] != live_cam["id"]
     ]
-
     fm_events = convert_schedule(
         fm_channel,
         schedule_cache[STATIONS["913AycltFM"]],
         start_time,
         end_time,
     )
-
     live_cam_events = []
     for event in fm_events:
         cam_event = dict(event)
@@ -357,7 +351,6 @@ def main():
         cam_event["channel_name"] = live_cam["name"]
         cam_event["icon"] = live_cam["icon"]
         live_cam_events.append(cam_event)
-
     all_events.extend(
         fill_schedule_gaps(live_cam, live_cam_events, start_time, end_time)
     )
@@ -365,11 +358,13 @@ def main():
     all_events = clean_events(all_events)
     if not validate_timelines(all_events):
         raise RuntimeError("EPG timeline validation failed")
+
     generate_xml(all_events)
     generate_json(all_events)
     if not validate_xml():
-        raise RuntimeError("Generated XMLTV validation failed")
-    print(f"Generated {XML_OUTPUT} and {JSON_OUTPUT} with {len(all_events)} programmes.")
+        raise RuntimeError("Generated XML validation failed")
+
+    print(f"Generated {len(all_events)} EPG programmes.")
 
 
 if __name__ == "__main__":

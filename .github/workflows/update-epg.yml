@@ -153,9 +153,8 @@ jobs:
           if not xml_programmes:
               raise SystemExit("EPG XML contains no programmes.")
 
-          # Every JSON programme marked live must have all mobile-friendly
-          # LIVE signals in XMLTV. This keeps Android/iPhone clients useful
-          # even when they do not render the graphical LIVE marker.
+          # Every JSON programme marked live must have the standard XMLTV
+          # LIVE signals. The visible title remains the normal programme title.
           live_json = {
               (
                   item.get("channel_id"),
@@ -181,9 +180,9 @@ jobs:
                           "A <live/> programme is missing sub-title=LIVE."
                       )
                   title = (programme.findtext("title") or "").strip()
-                  if not title.startswith("[LIVE] "):
+                  if title.startswith("[LIVE] "):
                       raise SystemExit(
-                          "A <live/> programme is missing the [LIVE] mobile title prefix."
+                          "A LIVE programme still contains the removed [LIVE] title prefix."
                       )
                   live_xml.add((
                       programme.get("channel"),

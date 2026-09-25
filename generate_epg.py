@@ -257,11 +257,9 @@ def generate_xml(events):
         programme = ET.SubElement(root, "programme", {"start": xmltv_datetime(event["start"]), "stop": xmltv_datetime(event["end"]), "channel": event["channel_id"]})
         is_live = event.get("live_program", False)
 
-        # Mobile-friendly LIVE fallback:
-        # Android/iPhone clients may not render XMLTV <live/> as a badge.
-        # Prefix the visible title while retaining the standard live metadata
-        # for clients that do support the marker.
-        display_title = f"[LIVE] {event['title']}" if is_live else event["title"]
+        # Keep the normal programme title. LIVE state is carried separately
+        # by the XMLTV live/category/sub-title metadata below.
+        display_title = event["title"]
         ET.SubElement(programme, "title", {"lang": "en"}).text = display_title
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
         if event.get("icon"):
@@ -299,11 +297,7 @@ def generate_json(events):
             "icon": event["icon"], "fallback": event["fallback"],
             "live": event.get("live_program", False),
             "live_badge": "LIVE" if event.get("live_program", False) else "",
-            "display_title": (
-                f"[LIVE] {event['title']}"
-                if event.get("live_program", False)
-                else event["title"]
-            ),
+            "display_title": event["title"],
         })
     Path(JSON_OUTPUT).write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
 

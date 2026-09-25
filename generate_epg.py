@@ -8,12 +8,6 @@ from urllib.parse import urlencode
 from xml.etree import ElementTree as ET
 from zoneinfo import ZoneInfo
 
-
-# ============================================================
-# 91.3 AYCLT FM - AZURACAST XMLTV EPG GENERATOR
-# Automatic DJ Schedule + Gap Filling
-# ============================================================
-
 AZURACAST_BASE_URL = "https://radio.913aycltfm.com"
 TIMEZONE = ZoneInfo("America/Chicago")
 DAYS_AHEAD = 7
@@ -27,67 +21,26 @@ STATIONS = {
 }
 
 CHANNELS = [
-    {
-        "id": "913AycltFM",
-        "display": "1",
-        "name": "91.3 Ayclt FM",
-        "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
-    },
-    {
-        "id": "913AycltFMHD2",
-        "display": "1.2",
-        "name": "91.3 Ayclt FM HD2",
-        "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png",
-    },
-    {
-        "id": "913AycltFMHD3",
-        "display": "1.3",
-        "name": "91.3 Ayclt FM HD3",
-        "description": "Dickinson's Texas #1 Hit Music Station",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png",
-    },
-    {
-        "id": "913AycltFMLiveStudioCam",
-        "display": "1.4",
-        "name": "91.3 Ayclt FM Live Studio Cam",
-        "description": "91.3 Ayclt FM Live Studio Cam",
-        "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png",
-    },
-    {
-        "id": "TheMidWestPlainsman",
-        "display": "1.5",
-        "name": "The Mid West Plainsman",
-        "description": "The Mid West Plainsman Is A Media Broadcast Content Creator In Waterloo, Iowa Covering Everything In The Cedar Valley Corridor and Central Iowa",
-        "icon": "https://mp3tourl.com/images/1790116455920-0030dd1a-85d7-401a-bb1b-8cdb4160da9a.png",
-    },
+    {"id": "913AycltFM", "display": "1", "name": "91.3 Ayclt FM", "description": "Dickinson's Texas #1 Hit Music Station", "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png"},
+    {"id": "913AycltFMHD2", "display": "1.2", "name": "91.3 Ayclt FM HD2", "description": "Dickinson's Texas #1 Hit Music Station", "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd2/background.1779890739.png"},
+    {"id": "913AycltFMHD3", "display": "1.3", "name": "91.3 Ayclt FM HD3", "description": "Dickinson's Texas #1 Hit Music Station", "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm_hd3/background.1779890763.png"},
+    {"id": "913AycltFMLiveStudioCam", "display": "1.4", "name": "91.3 Ayclt FM Live Studio Cam", "description": "91.3 Ayclt FM Live Studio Cam", "icon": "https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png"},
+    {"id": "TheMidWestPlainsman", "display": "1.5", "name": "The Mid West Plainsman", "description": "The Mid West Plainsman Is A Media Broadcast Content Creator In Waterloo, Iowa Covering Everything In The Cedar Valley Corridor and Central Iowa", "icon": "https://mp3tourl.com/images/1790116455920-0030dd1a-85d7-401a-bb1b-8cdb4160da9a.png"},
 ]
 
 
 def fetch_json(url):
-    print(f"Fetching API: {url}")
     request = Request(url, headers={"User-Agent": "91.3-Ayclt-FM-EPG/1.0", "Accept": "application/json"})
-    max_attempts = 3
-    retry_delays = (2, 5)
-    for attempt in range(1, max_attempts + 1):
+    for attempt in range(1, 4):
         try:
             with urlopen(request, timeout=30) as response:
                 return json.loads(response.read().decode("utf-8-sig"))
-        except HTTPError as error:
-            if error.code not in (429,) and not 500 <= error.code <= 599:
-                raise RuntimeError(f"AzuraCast API HTTP error {error.code}: {url}") from error
-            if attempt == max_attempts:
-                raise RuntimeError(f"AzuraCast API HTTP error {error.code} after {max_attempts} attempts: {url}") from error
-            time.sleep(retry_delays[attempt - 1])
-        except URLError as error:
-            if attempt == max_attempts:
-                raise RuntimeError(f"AzuraCast API connection error after {max_attempts} attempts: {error.reason}") from error
-            time.sleep(retry_delays[attempt - 1])
+        except (HTTPError, URLError) as error:
+            if attempt == 3:
+                raise RuntimeError(f"AzuraCast API request failed: {url}") from error
+            time.sleep((2, 5)[attempt - 1])
         except json.JSONDecodeError as error:
             raise RuntimeError(f"AzuraCast API returned invalid JSON: {url}") from error
-        except Exception as error:
-            raise RuntimeError(f"AzuraCast API request failed: {error}") from error
 
 
 def find_schedule_list(data):
@@ -168,7 +121,6 @@ def get_program_title(item, channel_name):
 
 
 def is_live_program(item):
-    """Return True when an AzuraCast schedule entry represents a DJ/streamer."""
     streamer = get_field(item, ["streamer_name", "streamer", "dj_name", "dj", "presenter_name", "presenter"])
     if isinstance(streamer, dict):
         streamer = get_field(streamer, ["name", "title", "display_name"])
@@ -198,10 +150,8 @@ def fetch_station_schedule(station_slug, start_date, end_date):
     while current_date <= end_date:
         chunk_end = min(current_date + timedelta(days=6), end_date)
         query = urlencode({"start": current_date.isoformat(), "end": chunk_end.isoformat()})
-        url = f"{AZURACAST_BASE_URL}/api/station/{station_slug}/schedule?{query}"
-        data = fetch_json(url)
-        chunk = find_schedule_list(data)
-        schedules.extend(chunk)
+        data = fetch_json(f"{AZURACAST_BASE_URL}/api/station/{station_slug}/schedule?{query}")
+        schedules.extend(find_schedule_list(data))
         current_date = chunk_end + timedelta(days=1)
     return schedules
 
@@ -215,17 +165,12 @@ def convert_schedule(channel, schedules, minimum, maximum):
         end = parse_datetime(get_field(item, ["end", "end_time", "end_datetime", "endDateTime", "ends_at", "end_at"]))
         if start is None or end is None or end <= start or end < minimum or start > maximum:
             continue
-        start = max(start, minimum)
-        end = min(end, maximum)
         events.append({
-            "channel_id": channel["id"],
-            "channel_name": channel["name"],
+            "channel_id": channel["id"], "channel_name": channel["name"],
             "title": get_program_title(item, channel["name"]),
             "description": get_description(item, channel["description"]),
-            "start": start,
-            "end": end,
-            "icon": channel["icon"],
-            "fallback": False,
+            "start": max(start, minimum), "end": min(end, maximum),
+            "icon": channel["icon"], "fallback": False,
             "live_program": is_live_program(item),
         })
     return events
@@ -233,120 +178,71 @@ def convert_schedule(channel, schedules, minimum, maximum):
 
 def add_filler_blocks(result, channel, start_time, end_time):
     current = start_time
-    block_size = timedelta(hours=1)
-    utc = ZoneInfo("UTC")
     while current < end_time:
-        current_utc = current.astimezone(utc)
-        block_end_utc = min(current_utc + block_size, end_time.astimezone(utc))
-        block_end = block_end_utc.astimezone(TIMEZONE)
-        result.append({
-            "channel_id": channel["id"],
-            "channel_name": channel["name"],
-            "title": channel["name"],
-            "description": channel["description"],
-            "start": current,
-            "end": block_end,
-            "icon": channel["icon"],
-            "fallback": True,
-            "live_program": False,
-        })
-        current = block_end
+        end = min(current + timedelta(hours=1), end_time)
+        result.append({"channel_id": channel["id"], "channel_name": channel["name"], "title": channel["name"], "description": channel["description"], "start": current, "end": end, "icon": channel["icon"], "fallback": True, "live_program": False, "live": False})
+        current = end
 
 
 def fill_schedule_gaps(channel, events, start_time, end_time):
-    result = []
-    scheduled = []
-    for event in events:
-        event_start = max(event["start"], start_time)
-        event_end = min(event["end"], end_time)
-        if event_end <= event_start:
-            continue
-        normalized = dict(event)
-        normalized["start"] = event_start
-        normalized["end"] = event_end
-        normalized["fallback"] = False
-        scheduled.append(normalized)
-    scheduled.sort(key=lambda x: (x["start"], -(x["end"] - x["start"]).total_seconds(), x["title"]))
+    scheduled = sorted(events, key=lambda x: (x["start"], -(x["end"] - x["start"]).total_seconds(), x["title"]))
     real_events = []
     for event in scheduled:
-        event_start = event["start"]
-        event_end = event["end"]
-        if real_events and event_start < real_events[-1]["end"]:
-            previous = real_events[-1]
-            if event_start == previous["start"]:
-                if event_end > previous["end"]:
-                    real_events[-1] = event
+        event = dict(event)
+        if real_events and event["start"] < real_events[-1]["end"]:
+            if event["start"] == real_events[-1]["start"]:
+                if event["end"] <= real_events[-1]["end"]:
+                    continue
+                real_events[-1] = event
                 continue
-            event_start = previous["end"]
-            if event_end <= event_start:
+            event["start"] = real_events[-1]["end"]
+            if event["end"] <= event["start"]:
                 continue
-            event = dict(event)
-            event["start"] = event_start
         real_events.append(event)
+    result = []
     current = start_time
     for event in real_events:
         if event["start"] > current:
             add_filler_blocks(result, channel, current, event["start"])
-        if event["end"] <= current:
-            continue
-        actual_event = dict(event)
-        actual_event["start"] = max(event["start"], current)
-        actual_event["end"] = event["end"]
-        actual_event["fallback"] = False
-        result.append(actual_event)
-        current = event["end"]
+        if event["end"] > current:
+            event["start"] = max(event["start"], current)
+            result.append(event)
+            current = event["end"]
     if current < end_time:
         add_filler_blocks(result, channel, current, end_time)
     return result
 
 
 def create_no_schedule_channel(channel, start_time, end_time):
-    return [{
-        "channel_id": channel["id"],
-        "channel_name": channel["name"],
-        "title": channel["name"],
-        "description": channel["description"],
-        "start": start_time,
-        "end": end_time,
-        "icon": channel["icon"],
-        "fallback": True,
-        "live_program": False,
-    }]
+    return [{"channel_id": channel["id"], "channel_name": channel["name"], "title": channel["name"], "description": channel["description"], "start": start_time, "end": end_time, "icon": channel["icon"], "fallback": True, "live_program": False, "live": False}]
 
 
 def clean_events(events):
-    events.sort(key=lambda event: (event["channel_id"], event["start"], event["end"], event["title"]))
-    cleaned = []
+    events.sort(key=lambda x: (x["channel_id"], x["start"], x["end"], x["title"]))
     seen = set()
+    result = []
     for event in events:
         key = (event["channel_id"], event["start"].isoformat(), event["end"].isoformat(), event["title"])
-        if key in seen:
-            continue
-        seen.add(key)
-        cleaned.append(event)
-    return cleaned
+        if key not in seen:
+            seen.add(key)
+            result.append(event)
+    return result
 
 
 def validate_timelines(events):
     grouped = {}
     for event in events:
         grouped.setdefault(event["channel_id"], []).append(event)
-    errors = []
     for channel_id, channel_events in grouped.items():
-        channel_events.sort(key=lambda event: (event["start"], event["end"]))
+        channel_events.sort(key=lambda x: (x["start"], x["end"]))
         previous = None
         for event in channel_events:
             if event["end"] <= event["start"]:
-                errors.append(f"{channel_id}: invalid interval {event['start']} -> {event['end']}")
-            if previous is not None and event["start"] < previous["end"]:
-                errors.append(f"{channel_id}: overlap between '{previous['title']}' and '{event['title']}'")
+                return False
+            if previous and event["start"] < previous["end"]:
+                print(f"Overlap: {channel_id}")
+                return False
             previous = event
-    if errors:
-        print("TIMELINE VALIDATION FAILED:")
-        for error in errors:
-            print(f"  - {error}")
-        return False
-    print(f"Timeline validation successful: {len(grouped)} channels checked; no overlapping programmes.")
     return True
 
 
@@ -356,34 +252,107 @@ def generate_xml(events):
         channel_element = ET.SubElement(root, "channel", {"id": channel["id"]})
         ET.SubElement(channel_element, "display-name").text = channel["display"]
         ET.SubElement(channel_element, "display-name").text = channel["name"]
-
     for event in events:
-        programme = ET.SubElement(root, "programme", {
-            "start": xmltv_datetime(event["start"]),
-            "stop": xmltv_datetime(event["end"]),
-            "channel": event["channel_id"],
-        })
+        programme = ET.SubElement(root, "programme", {"start": xmltv_datetime(event["start"]), "stop": xmltv_datetime(event["end"]), "channel": event["channel_id"]})
         ET.SubElement(programme, "title", {"lang": "en"}).text = event["title"]
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
-
-        # Jellyfin maps the XMLTV <live /> element to ProgramInfo.IsLive.
-        # Do not add a LIVE category; the native live element is the marker.
-        if event.get("live_program"):
+        # Native Jellyfin LIVE marker only. No LIVE category is emitted.
+        if event.get("live", False):
             ET.SubElement(programme, "live")
-
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
-
     try:
         ET.indent(root, space="  ")
     except AttributeError:
         pass
-    tree = ET.ElementTree(root)
     path = Path(XML_OUTPUT)
-    tree.write(path, encoding="utf-8", xml_declaration=True)
+    ET.ElementTree(root).write(path, encoding="utf-8", xml_declaration=True)
     xml = path.read_text(encoding="utf-8")
-    xml = xml.replace('<?xml version=\'1.0\' encoding=\'utf-8\'?>', '<?xml version="1.0" encoding="utf-8"?>', 1)
+    xml = xml.replace("<?xml version='1.0' encoding='utf-8'?>", '<?xml version="1.0" encoding="utf-8"?>', 1)
     if "<!DOCTYPE tv SYSTEM" not in xml:
         xml = xml.replace('<?xml version="1.0" encoding="utf-8"?>', '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE tv SYSTEM "xmltv.dtd">', 1)
     path.write_text(xml, encoding="utf-8")
-    print(f"Created: {XML_OUTPUT}")
+
+
+def generate_json(events):
+    output = []
+    for event in events:
+        output.append({
+            "channel_id": event["channel_id"],
+            "station_name": event["channel_name"],
+            "title": event["title"],
+            "description": event["description"],
+            "start": event["start"].isoformat(),
+            "end": event["end"].isoformat(),
+            "icon": event["icon"],
+            "fallback": event["fallback"],
+            "live": event.get("live", False),
+            "live_badge": "LIVE" if event.get("live", False) else "",
+        })
+    Path(JSON_OUTPUT).write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def validate_xml():
+    try:
+        ET.parse(XML_OUTPUT)
+        return True
+    except Exception as error:
+        print(f"XML validation FAILED: {error}")
+        return False
+
+
+def main():
+    now = datetime.now(TIMEZONE)
+    start_time = now.replace(minute=0, second=0, microsecond=0)
+    end_time = start_time + timedelta(days=DAYS_AHEAD)
+    schedule_start_date = start_time.date() - timedelta(days=1)
+    all_events = []
+    schedule_cache = {}
+
+    for channel in CHANNELS:
+        channel_id = channel["id"]
+        if channel_id not in STATIONS:
+            continue
+        station_slug = STATIONS[channel_id]
+        if station_slug not in schedule_cache:
+            schedule_cache[station_slug] = fetch_station_schedule(station_slug, schedule_start_date, end_time.date())
+        actual_events = convert_schedule(channel, schedule_cache[station_slug], start_time, end_time)
+        all_events.extend(fill_schedule_gaps(channel, actual_events, start_time, end_time))
+
+    live_cam = next(channel for channel in CHANNELS if channel["id"] == "913AycltFMLiveStudioCam")
+    fm_channel = next(channel for channel in CHANNELS if channel["id"] == "913AycltFM")
+    fm_events = convert_schedule(fm_channel, schedule_cache[STATIONS["913AycltFM"]], start_time, end_time)
+    studio_events = []
+    for event in fm_events:
+        studio_event = dict(event)
+        studio_event["channel_id"] = live_cam["id"]
+        studio_event["channel_name"] = live_cam["name"]
+        studio_event["icon"] = live_cam["icon"]
+        studio_events.append(studio_event)
+    all_events.extend(fill_schedule_gaps(live_cam, studio_events, start_time, end_time))
+
+    plainsman = next(channel for channel in CHANNELS if channel["id"] == "TheMidWestPlainsman")
+    all_events.extend(create_no_schedule_channel(plainsman, start_time, end_time))
+
+    hd_channels = {"913AycltFMHD2", "913AycltFMHD3"}
+    for event in all_events:
+        channel_id = event["channel_id"]
+        if channel_id in {"913AycltFM", "913AycltFMLiveStudioCam"}:
+            event["live"] = bool(event.get("live_program", False))
+        elif channel_id in hd_channels:
+            event["live"] = bool(event.get("live_program", False) and event["start"] <= now < event["end"])
+        else:
+            event["live"] = False
+
+    all_events = clean_events(all_events)
+    if not validate_timelines(all_events):
+        raise SystemExit("EPG generation stopped because overlapping programmes were detected.")
+    generate_xml(all_events)
+    generate_json(all_events)
+    if not validate_xml():
+        raise SystemExit("EPG generation failed.")
+    print("EPG GENERATION COMPLETE")
+
+
+if __name__ == "__main__":
+    main()

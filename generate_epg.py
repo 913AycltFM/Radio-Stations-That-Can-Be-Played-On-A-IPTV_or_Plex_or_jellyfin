@@ -262,7 +262,9 @@ def generate_xml(events):
         # Live programs use <live/> followed immediately by <new/>.
         # Keep both markers after the icon so <live/> is not lost or moved.
         if event.get("live_program", False):
+            # XMLTV live marker used by Jellyfin-compatible clients.
             ET.SubElement(programme, "live")
+            ET.SubElement(programme, "category", {"lang": "en"}).text = "LIVE"
             ET.SubElement(programme, "new")
     try:
         ET.indent(root, space="  ")

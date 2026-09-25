@@ -153,9 +153,8 @@ jobs:
               sign = 1 if offset[0] == "+" else -1
               hours = int(offset[1:3])
               minutes = int(offset[3:5])
-              return f"{dt[:4]}-{dt[4:6]}-{dt[6:8]}T{dt[8:10]}:{dt[10:12]}:{dt[12:14]}{sign:+03d}:{minutes:02d}".replace(
-                  "+-", "-"
-              )
+              sign_char = "+" if sign == 1 else "-"
+              return f"{dt[:4]}-{dt[4:6]}-{dt[6:8]}T{dt[8:10]}:{dt[10:12]}:{dt[12:14]}{sign_char}{hours:02d}:{minutes:02d}"
 
           live_json = {
               (

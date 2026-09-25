@@ -971,10 +971,8 @@ def generate_xml(events):
         # the XMLTV <live> element. Keep the LIVE category too for
         # clients that use XMLTV categories.
         if event.get("live"):
-            ET.SubElement(
-                programme,
-                "live"
-            )
+            # Jellyfin-compatible LIVE marker: use a text category.
+            # Do not emit the empty XMLTV <live /> element.
             ET.SubElement(
                 programme,
                 "category",
@@ -982,6 +980,7 @@ def generate_xml(events):
                     "lang": "en"
                 },
             ).text = "LIVE"
+
         if event.get("icon"):
 
             ET.SubElement(

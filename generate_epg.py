@@ -14,6 +14,7 @@ DAYS_AHEAD = 7
 XML_OUTPUT = "91.3_Ayclt_FM_radio_guide.xml"
 JSON_OUTPUT = "epg.json"
 
+# The existing station/channel configuration remains unchanged.
 STATIONS = {
     "913AycltFM": "91.3_ayclt_fm",
     "913AycltFMHD2": "91.3_ayclt_fm_hd2",
@@ -257,7 +258,7 @@ def generate_xml(events):
         ET.SubElement(programme, "title", {"lang": "en"}).text = event["title"]
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
         # Native Jellyfin LIVE marker only. No LIVE category is emitted.
-        if event.get("live", False):
+        if event.get("live_program", False):
             ET.SubElement(programme, "live")
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
@@ -271,6 +272,9 @@ def generate_xml(events):
     xml = xml.replace("<?xml version='1.0' encoding='utf-8'?>", '<?xml version="1.0" encoding="utf-8"?>', 1)
     if "<!DOCTYPE tv SYSTEM" not in xml:
         xml = xml.replace('<?xml version="1.0" encoding="utf-8"?>', '<?xml version="1.0" encoding="utf-8"?>\n<!DOCTYPE tv SYSTEM "xmltv.dtd">', 1)
+    # ElementTree writes an empty element as <live />. Normalize only that
+    # marker so the generated guide uses the exact requested <live/> form.
+    xml = xml.replace("<live />", "<live/>")
     path.write_text(xml, encoding="utf-8")
 
 
@@ -278,16 +282,12 @@ def generate_json(events):
     output = []
     for event in events:
         output.append({
-            "channel_id": event["channel_id"],
-            "station_name": event["channel_name"],
-            "title": event["title"],
-            "description": event["description"],
-            "start": event["start"].isoformat(),
-            "end": event["end"].isoformat(),
-            "icon": event["icon"],
-            "fallback": event["fallback"],
-            "live": event.get("live", False),
-            "live_badge": "LIVE" if event.get("live", False) else "",
+            "channel_id": event["channel_id"], "station_name": event["channel_name"],
+            "title": event["title"], "description": event["description"],
+            "start": event["start"].isoformat(), "end": event["end"].isoformat(),
+            "icon": event["icon"], "fallback": event["fallback"],
+            "live": event.get("live_program", False),
+            "live_badge": "LIVE" if event.get("live_program", False) else "",
         })
     Path(JSON_OUTPUT).write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
 
@@ -322,36 +322,23 @@ def main():
     live_cam = next(channel for channel in CHANNELS if channel["id"] == "913AycltFMLiveStudioCam")
     fm_channel = next(channel for channel in CHANNELS if channel["id"] == "913AycltFM")
     fm_events = convert_schedule(fm_channel, schedule_cache[STATIONS["913AycltFM"]], start_time, end_time)
-    studio_events = []
+    live_cam_events = []
     for event in fm_events:
-        studio_event = dict(event)
-        studio_event["channel_id"] = live_cam["id"]
-        studio_event["channel_name"] = live_cam["name"]
-        studio_event["icon"] = live_cam["icon"]
-        studio_events.append(studio_event)
-    all_events.extend(fill_schedule_gaps(live_cam, studio_events, start_time, end_time))
-
-    plainsman = next(channel for channel in CHANNELS if channel["id"] == "TheMidWestPlainsman")
-    all_events.extend(create_no_schedule_channel(plainsman, start_time, end_time))
-
-    hd_channels = {"913AycltFMHD2", "913AycltFMHD3"}
-    for event in all_events:
-        channel_id = event["channel_id"]
-        if channel_id in {"913AycltFM", "913AycltFMLiveStudioCam"}:
-            event["live"] = bool(event.get("live_program", False))
-        elif channel_id in hd_channels:
-            event["live"] = bool(event.get("live_program", False) and event["start"] <= now < event["end"])
-        else:
-            event["live"] = False
+        cam_event = dict(event)
+        cam_event["channel_id"] = live_cam["id"]
+        cam_event["channel_name"] = live_cam["name"]
+        cam_event["icon"] = live_cam["icon"]
+        live_cam_events.append(cam_event)
+    all_events.extend(fill_schedule_gaps(live_cam, live_cam_events, start_time, end_time))
 
     all_events = clean_events(all_events)
     if not validate_timelines(all_events):
-        raise SystemExit("EPG generation stopped because overlapping programmes were detected.")
+        raise RuntimeError("EPG timeline validation failed")
     generate_xml(all_events)
     generate_json(all_events)
     if not validate_xml():
-        raise SystemExit("EPG generation failed.")
-    print("EPG GENERATION COMPLETE")
+        raise RuntimeError("Generated XMLTV validation failed")
+    print(f"Generated {XML_OUTPUT} and {JSON_OUTPUT} with {len(all_events)} programmes.")
 
 
 if __name__ == "__main__":

@@ -257,11 +257,11 @@ def generate_xml(events):
         programme = ET.SubElement(root, "programme", {"start": xmltv_datetime(event["start"]), "stop": xmltv_datetime(event["end"]), "channel": event["channel_id"]})
         ET.SubElement(programme, "title", {"lang": "en"}).text = event["title"]
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
-        # Mark live DJ programs with the native XMLTV/Jellyfin live marker.
-        if event.get("live_program", False):
-            ET.SubElement(programme, "live")
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
+        # Keep the live marker as the final element in the programme block.
+        if event.get("live_program", False):
+            ET.SubElement(programme, "live")
     try:
         ET.indent(root, space="  ")
     except AttributeError:

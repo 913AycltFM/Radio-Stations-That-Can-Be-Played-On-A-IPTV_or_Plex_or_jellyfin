@@ -122,17 +122,43 @@ def get_program_title(item, channel_name):
 
 
 def is_live_program(item):
-    streamer = get_field(item, ["streamer_name", "streamer", "dj_name", "dj", "presenter_name", "presenter"])
+    """Return True only when AzuraCast identifies the item as a live DJ/streamer."""
+    # Prefer explicit boolean live fields when the API provides them.
+    for name in ("is_live", "live", "is_live_dj", "live_dj"):
+        value = get_field(item, [name])
+        if isinstance(value, bool):
+            return value
+        if isinstance(value, str) and value.strip().lower() in {"true", "yes", "1"}:
+            return True
+        if isinstance(value, str) and value.strip().lower() in {"false", "no", "0"}:
+            return False
+
+    streamer = get_field(
+        item,
+        ["streamer_name", "streamer", "dj_name", "dj", "presenter_name", "presenter"],
+    )
     if isinstance(streamer, dict):
         streamer = get_field(streamer, ["name", "title", "display_name"])
     if streamer and str(streamer).strip():
         return True
+
     description = get_field(item, ["description", "desc"])
     if description:
         description = str(description).strip()
         if description.lower().startswith(("streamer:", "live dj:")):
             return bool(description.split(":", 1)[1].strip())
+
     return False
+
+
+def set_live_metadata(programme, is_live):
+    """Apply the same LIVE metadata to every live programme."""
+    if not is_live:
+        return
+    ET.SubElement(programme, "live")
+    ET.SubElement(programme, "category", {"lang": "en"}).text = "LIVE"
+    ET.SubElement(programme, "sub-title", {"lang": "en"}).text = "LIVE"
+    ET.SubElement(programme, "new")
 
 
 def get_description(item, channel_description):
@@ -264,12 +290,8 @@ def generate_xml(events):
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
-        # Keep multiple LIVE signals for broad Jellyfin client compatibility.
-        if is_live:
-            ET.SubElement(programme, "live")
-            ET.SubElement(programme, "category", {"lang": "en"}).text = "LIVE"
-            ET.SubElement(programme, "sub-title", {"lang": "en"}).text = "LIVE"
-            ET.SubElement(programme, "new")
+        # Keep the LIVE metadata identical for FM, HD2, HD3 and Live Studio Cam.
+        set_live_metadata(programme, is_live)
     try:
         ET.indent(root, space="  ")
     except AttributeError:

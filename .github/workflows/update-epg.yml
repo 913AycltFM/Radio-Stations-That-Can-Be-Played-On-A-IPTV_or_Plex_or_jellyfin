@@ -153,6 +153,38 @@ jobs:
           if not xml_programmes:
               raise SystemExit("EPG XML contains no programmes.")
 
+          # Every JSON programme marked live must have both XMLTV live
+          # metadata markers. This prevents the web guide from receiving
+          # inconsistent LIVE state after an automatic update.
+          live_json = {
+              (
+                  item.get("channel_id"),
+                  item.get("start"),
+                  item.get("end"),
+                  item.get("title"),
+              )
+              for item in data
+              if item.get("live") is True
+          }
+
+          live_xml = set()
+          for programme in xml_programmes:
+              if programme.find("live") is not None:
+                  category = programme.find("category")
+                  if category is None or (category.text or "").strip().upper() != "LIVE":
+                      raise SystemExit(
+                          "A <live/> programme is missing category=LIVE."
+                      )
+                  live_xml.add((
+                      programme.get("channel"),
+                      programme.get("start"),
+                      programme.get("stop"),
+                      (programme.findtext("title") or "").strip(),
+                  ))
+
+          if live_json and not live_xml:
+              raise SystemExit("JSON contains LIVE programmes but XML contains none.")
+
           print(
               f"JSON validation successful: {len(data)} programmes; "
               f"{len(json_channels)} channels."

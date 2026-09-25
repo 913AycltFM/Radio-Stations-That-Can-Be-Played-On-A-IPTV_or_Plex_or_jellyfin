@@ -334,7 +334,22 @@ def main():
 
     live_cam = next(channel for channel in CHANNELS if channel["id"] == "913AycltFMLiveStudioCam")
     fm_channel = next(channel for channel in CHANNELS if channel["id"] == "913AycltFM")
-    fm_events = convert_schedule(fm_channel, schedule_cache[STATIONS["913AycltFM"]], start_time, end_time)
+
+    # The Live Studio Cam mirrors the FM schedule. Do not duplicate the
+    # already-generated fallback/filler timeline for the camera; rebuild its
+    # timeline from the actual FM schedule only.
+    all_events = [
+        event for event in all_events
+        if event["channel_id"] != live_cam["id"]
+    ]
+
+    fm_events = convert_schedule(
+        fm_channel,
+        schedule_cache[STATIONS["913AycltFM"]],
+        start_time,
+        end_time,
+    )
+
     live_cam_events = []
     for event in fm_events:
         cam_event = dict(event)
@@ -342,7 +357,10 @@ def main():
         cam_event["channel_name"] = live_cam["name"]
         cam_event["icon"] = live_cam["icon"]
         live_cam_events.append(cam_event)
-    all_events.extend(fill_schedule_gaps(live_cam, live_cam_events, start_time, end_time))
+
+    all_events.extend(
+        fill_schedule_gaps(live_cam, live_cam_events, start_time, end_time)
+    )
 
     all_events = clean_events(all_events)
     if not validate_timelines(all_events):

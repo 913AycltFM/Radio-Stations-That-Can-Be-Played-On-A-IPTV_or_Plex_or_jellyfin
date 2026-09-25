@@ -123,7 +123,14 @@ The repository-generated files are intended to remain compatible with the statio
 
 ## Notes
 
-The XMLTV standard does not define a universal graphical LIVE box. This project supplies the live state using the XMLTV `<live />` element so compatible clients, including Jellyfin's Live TV guide, can identify live programmes.
+The XMLTV standard does not define a universal graphical LIVE box. This project therefore supplies multiple LIVE signals for compatibility:
+
+- `<live/>` for clients that support the XMLTV live marker.
+- `<category lang="en">LIVE</category>` for clients that use programme categories.
+- `<sub-title lang="en">LIVE</sub-title>` for clients that expose programme subtitles.
+- `[LIVE]` at the beginning of the programme title as a mobile-friendly fallback for Android/iPhone clients that do not render a graphical LIVE badge.
+
+Jellyfin Web/Desktop can render its own LIVE indicator from the guide data. Android/iPhone clients may instead display the `[LIVE]` title fallback when their native guide UI does not expose the graphical badge.
 
 Because the XMLTV and JSON files are generated automatically, manual edits to those generated files may be replaced by the next EPG update.
 

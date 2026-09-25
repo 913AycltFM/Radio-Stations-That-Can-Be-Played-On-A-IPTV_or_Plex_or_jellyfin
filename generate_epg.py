@@ -971,8 +971,12 @@ def generate_xml(events):
         # the XMLTV <live> element. Keep the LIVE category too for
         # clients that use XMLTV categories.
         if event.get("live"):
-            # Jellyfin-compatible LIVE marker: use a text category.
-            # Do not emit the empty XMLTV <live /> element.
+            # Jellyfin's XMLTV reader maps <live /> to ProgramInfo.IsLive.
+            # Keep the LIVE category for clients that display categories.
+            ET.SubElement(
+                programme,
+                "live"
+            )
             ET.SubElement(
                 programme,
                 "category",

@@ -257,9 +257,11 @@ def generate_xml(events):
         programme = ET.SubElement(root, "programme", {"start": xmltv_datetime(event["start"]), "stop": xmltv_datetime(event["end"]), "channel": event["channel_id"]})
         ET.SubElement(programme, "title", {"lang": "en"}).text = event["title"]
         ET.SubElement(programme, "desc", {"lang": "en"}).text = event["description"]
-        # Native Jellyfin LIVE marker only. No LIVE category is emitted.
+        # Mark live DJ programs with both the XMLTV live marker and a
+        # standard LIVE category for clients that expose categories.
         if event.get("live_program", False):
             ET.SubElement(programme, "live")
+            ET.SubElement(programme, "category", {"lang": "en"}).text = "LIVE"
         if event.get("icon"):
             ET.SubElement(programme, "icon", {"src": event["icon"]})
     try:

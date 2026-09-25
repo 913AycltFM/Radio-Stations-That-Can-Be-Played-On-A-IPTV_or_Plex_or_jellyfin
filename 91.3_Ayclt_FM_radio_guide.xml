@@ -36,6 +36,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925100000 -0500" stop="20260925120000 -0500" channel="913AycltFM">
@@ -43,6 +44,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925120000 -0500" stop="20260925130000 -0500" channel="913AycltFM">
@@ -55,6 +57,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925150000 -0500" stop="20260925160000 -0500" channel="913AycltFM">
@@ -77,6 +80,7 @@
     <desc lang="en">Live DJ: DJ Nicko</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925220000 -0500" stop="20260925230000 -0500" channel="913AycltFM">
@@ -174,6 +178,7 @@
     <desc lang="en">Live DJ: DJ CoyoteDave</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260926180000 -0500" stop="20260926190000 -0500" channel="913AycltFM">
@@ -191,6 +196,7 @@
     <desc lang="en">Live DJ: 91.3 Ayclt FM Mobile Studio</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260926230000 -0500" stop="20260927000000 -0500" channel="913AycltFM">
@@ -253,6 +259,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260927120000 -0500" stop="20260927130000 -0500" channel="913AycltFM">
@@ -360,6 +367,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928100000 -0500" stop="20260928120000 -0500" channel="913AycltFM">
@@ -367,6 +375,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928120000 -0500" stop="20260928123000 -0500" channel="913AycltFM">
@@ -379,6 +388,7 @@
     <desc lang="en">Live DJ: 91.3 Ayclt FM</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928143000 -0500" stop="20260928150000 -0500" channel="913AycltFM">
@@ -391,6 +401,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928170000 -0500" stop="20260928180000 -0500" channel="913AycltFM">
@@ -473,6 +484,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260929110000 -0500" stop="20260929120000 -0500" channel="913AycltFM">
@@ -500,6 +512,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260929170000 -0500" stop="20260929180000 -0500" channel="913AycltFM">
@@ -582,6 +595,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930100000 -0500" stop="20260930110000 -0500" channel="913AycltFM">
@@ -599,6 +613,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930140000 -0500" stop="20260930150000 -0500" channel="913AycltFM">
@@ -611,6 +626,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930170000 -0500" stop="20260930180000 -0500" channel="913AycltFM">
@@ -693,6 +709,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20261001130000 -0500" stop="20261001140000 -0500" channel="913AycltFM">
@@ -725,6 +742,7 @@
     <desc lang="en">Live DJ: DJ Nicko</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20261001220000 -0500" stop="20261001230000 -0500" channel="913AycltFM">
@@ -2462,6 +2480,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925100000 -0500" stop="20260925120000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2469,6 +2488,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925120000 -0500" stop="20260925130000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2481,6 +2501,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925150000 -0500" stop="20260925160000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2503,6 +2524,7 @@
     <desc lang="en">Live DJ: DJ Nicko</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260925220000 -0500" stop="20260925230000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2600,6 +2622,7 @@
     <desc lang="en">Live DJ: DJ CoyoteDave</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260926180000 -0500" stop="20260926190000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2617,6 +2640,7 @@
     <desc lang="en">Live DJ: 91.3 Ayclt FM Mobile Studio</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260926230000 -0500" stop="20260927000000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2679,6 +2703,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260927120000 -0500" stop="20260927130000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2786,6 +2811,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928100000 -0500" stop="20260928120000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2793,6 +2819,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928120000 -0500" stop="20260928123000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2805,6 +2832,7 @@
     <desc lang="en">Live DJ: 91.3 Ayclt FM</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928143000 -0500" stop="20260928150000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2817,6 +2845,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260928170000 -0500" stop="20260928180000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2899,6 +2928,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260929110000 -0500" stop="20260929120000 -0500" channel="913AycltFMLiveStudioCam">
@@ -2926,6 +2956,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260929170000 -0500" stop="20260929180000 -0500" channel="913AycltFMLiveStudioCam">
@@ -3008,6 +3039,7 @@
     <desc lang="en">Live DJ: JB In The Morning</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930100000 -0500" stop="20260930110000 -0500" channel="913AycltFMLiveStudioCam">
@@ -3025,6 +3057,7 @@
     <desc lang="en">Live DJ: DJ WolfDen</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930140000 -0500" stop="20260930150000 -0500" channel="913AycltFMLiveStudioCam">
@@ -3037,6 +3070,7 @@
     <desc lang="en">Live DJ: DJ Brandon Stone</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20260930170000 -0500" stop="20260930180000 -0500" channel="913AycltFMLiveStudioCam">
@@ -3119,6 +3153,7 @@
     <desc lang="en">Live DJ: Rock Doc</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20261001130000 -0500" stop="20261001140000 -0500" channel="913AycltFMLiveStudioCam">
@@ -3151,6 +3186,7 @@
     <desc lang="en">Live DJ: DJ Nicko</desc>
     <icon src="https://radio.913aycltfm.com/static/uploads/91.3_ayclt_fm/background.1779890712.png" />
     <live/>
+    <category lang="en">LIVE</category>
     <new/>
   </programme>
   <programme start="20261001220000 -0500" stop="20261001230000 -0500" channel="913AycltFMLiveStudioCam">

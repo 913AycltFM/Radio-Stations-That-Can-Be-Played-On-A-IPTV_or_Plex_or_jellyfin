@@ -311,13 +311,26 @@ def main():
 
     for channel in CHANNELS:
         channel_id = channel["id"]
+
+        # AzuraCast-backed channels use their station schedule.
+        # Channels that are not hosted in AzuraCast still MUST receive
+        # a valid EPG timeline so JSON/XML channel coverage stays complete.
         if channel_id not in STATIONS:
+            all_events.extend(create_no_schedule_channel(channel, start_time, end_time))
             continue
+
         station_slug = STATIONS[channel_id]
         if station_slug not in schedule_cache:
-            schedule_cache[station_slug] = fetch_station_schedule(station_slug, schedule_start_date, end_time.date())
-        actual_events = convert_schedule(channel, schedule_cache[station_slug], start_time, end_time)
-        all_events.extend(fill_schedule_gaps(channel, actual_events, start_time, end_time))
+            schedule_cache[station_slug] = fetch_station_schedule(
+                station_slug, schedule_start_date, end_time.date()
+            )
+
+        actual_events = convert_schedule(
+            channel, schedule_cache[station_slug], start_time, end_time
+        )
+        all_events.extend(
+            fill_schedule_gaps(channel, actual_events, start_time, end_time)
+        )
 
     live_cam = next(channel for channel in CHANNELS if channel["id"] == "913AycltFMLiveStudioCam")
     fm_channel = next(channel for channel in CHANNELS if channel["id"] == "913AycltFM")
